@@ -1,156 +1,502 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Gwin Analytics</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gwin Analytics</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #11161d;
+      --panel-2: #151b23;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --line: #232b36;
+      --accent: #60a5fa;
+      --accent-soft: rgba(96, 165, 250, 0.12);
+      --max: 1040px;
+      --radius: 18px;
+      --shadow: 0 12px 40px rgba(0,0,0,0.28);
+    }
 
-<style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0b0f14 0%, #0d1117 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-body{
-font-family: Arial, Helvetica, sans-serif;
-background:#ffffff;
-color:#111;
-margin:0;
-padding:0;
-line-height:1.6;
-}
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:40px;
-}
+    a:hover { color: var(--accent); }
 
-h1{
-font-size:42px;
-margin-bottom:10px;
-}
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
 
-h2{
-margin-top:50px;
-}
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(13, 17, 23, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
 
-.subtitle{
-font-size:18px;
-color:#555;
-margin-bottom:40px;
-}
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-.project{
-margin-bottom:25px;
-}
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+    }
 
-a{
-color:#0066cc;
-text-decoration:none;
-}
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-a:hover{
-text-decoration:underline;
-}
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-.section{
-margin-top:50px;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-top: 28px;
+    }
 
-</style>
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .profile {
+      padding: 26px;
+      position: sticky;
+      top: 84px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(96,165,250,0.28);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .title {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .intro {
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #08111f;
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .section {
+      padding: 26px;
+    }
+
+    .section-label {
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-transform: lowercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .lede {
+      color: var(--muted);
+      max-width: 68ch;
+      margin: 0;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .card {
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      min-height: 182px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .meta span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 6px 8px;
+      border-radius: 999px;
+    }
+
+    .card-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .card-links a {
+      font-size: 0.92rem;
+      color: var(--accent);
+    }
+
+    .app-card {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 14px;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
+    }
+
+    .app-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 28px 0 12px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        position: static;
+      }
+
+      .grid,
+      .app-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 20px 14px 42px; }
+      .nav-inner { padding: 12px 14px; }
+      .section, .profile { padding: 20px; }
+      h1 { font-size: 2.15rem; }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">Gwin Analytics</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#applications">Applications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
 
-<div class="container">
+  <main class="wrap">
+    <div class="hero">
+      <aside class="panel profile">
+        <div class="avatar">JG</div>
+        <div class="eyebrow">Data Analyst Portfolio</div>
+        <h2 style="margin:0 0 8px; font-size:1.7rem;">Jardin Gwin</h2>
+        <p class="title">Data Analyst & Analytics Developer</p>
+        <p class="intro">
+          Building dashboards, analytics applications, and business insights with a focus on practical, public-facing work.
+        </p>
+        <div class="button-row">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#applications">View App</a>
+        </div>
+        <div class="mini-list">
+          <div>Power BI • Excel • SQL • Python</div>
+          <div>Financial Analytics • Cost of Living • Market Research</div>
+          <div><a href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">LinkedIn</a></div>
+        </div>
+      </aside>
 
-<h1>Gwin Analytics</h1>
+      <section class="content">
+        <section id="about" class="panel section">
+          <div class="section-label">/about</div>
+          <h1>Gwin Analytics</h1>
+          <p class="lede">
+            I build data dashboards, analytics applications, and business intelligence projects that turn ideas, spreadsheets, and research into something clear, usable, and public.
+          </p>
+          <div class="skills">
+            <span class="chip">Power BI</span>
+            <span class="chip">Excel</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">Data Visualization</span>
+            <span class="chip">Business Analytics</span>
+            <span class="chip">Economic Research</span>
+          </div>
+        </section>
 
-<p class="subtitle">
-Data dashboards, analytics applications, and business insights.
-</p>
+        <section id="projects" class="panel section">
+          <div class="section-label">/projects</div>
+          <h2>Selected Projects</h2>
+          <div class="grid">
+            <article class="card">
+              <div>
+                <h3>Retail Sales Dashboard</h3>
+                <p>Power BI dashboard analyzing revenue trends, product performance, and sales visibility.</p>
+                <div class="meta">
+                  <span>Power BI</span><span>Excel</span><span>Sales Analytics</span>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="#">Add project link</a>
+              </div>
+            </article>
 
-<div class="section">
-<h2>About Me</h2>
+            <article class="card">
+              <div>
+                <h3>Tesla Stock Analysis</h3>
+                <p>Financial analysis exploring stock movement, volatility, and long-term performance patterns.</p>
+                <div class="meta">
+                  <span>Finance</span><span>Visualization</span><span>Research</span>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="#">Add project link</a>
+              </div>
+            </article>
 
-<p>
-I am a data analyst focused on building dashboards, analytics tools,
-and business intelligence applications using Power BI, Excel, SQL,
-and modern data visualization techniques.
-</p>
+            <article class="card">
+              <div>
+                <h3>Cost of Living Data Analysis</h3>
+                <p>Data project focused on inflation, affordability, and real-world consumer expense trends.</p>
+                <div class="meta">
+                  <span>Economic Data</span><span>Research</span><span>Power BI</span>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="#">Add project link</a>
+              </div>
+            </article>
 
-<p>
-My work includes financial analytics tools, cost-of-living analysis,
-market research, and interactive business dashboards.
-</p>
+            <article class="card">
+              <div>
+                <h3>E-Commerce Customer Dashboard</h3>
+                <p>Customer analytics dashboard exploring purchase behavior, engagement, and revenue patterns.</p>
+                <div class="meta">
+                  <span>E-Commerce</span><span>Dashboard</span><span>Analytics</span>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="#">Add project link</a>
+              </div>
+            </article>
 
-</div>
+            <article class="card">
+              <div>
+                <h3>Housing Price Analyst Dashboard</h3>
+                <p>Housing market dashboard analyzing price differences, trends, and affordability across locations.</p>
+                <div class="meta">
+                  <span>Housing</span><span>Market Research</span><span>Power BI</span>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="#">Add project link</a>
+              </div>
+            </article>
 
+            <article class="card">
+              <div>
+                <h3>WealthIQ Financial Analytics</h3>
+                <p>Interactive financial analytics project designed to help users explore personal finance insights.</p>
+                <div class="meta">
+                  <span>App</span><span>Financial Analytics</span><span>Web</span>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="#applications">View application</a>
+              </div>
+            </article>
+          </div>
+        </section>
 
-<div class="section">
-<h2>Projects</h2>
+        <section id="applications" class="panel section">
+          <div class="section-label">/applications</div>
+          <h2>Featured Application</h2>
+          <div class="app-card">
+            <div>
+              <h3 style="margin:0 0 8px; font-size:1.15rem;">WealthIQ Financial Analytics</h3>
+              <p>
+                A live analytics application focused on financial insights, user interaction, and turning raw numbers into something more usable.
+              </p>
+            </div>
+            <div class="button-row" style="margin:0; justify-content:flex-start;">
+              <a class="btn primary" href="#">Add app link</a>
+            </div>
+          </div>
+        </section>
 
-<div class="project">
-<strong>Retail Sales Dashboard</strong><br>
-Power BI dashboard analyzing revenue trends, product performance,
-and regional sales distribution.
-</div>
+        <section id="contact" class="panel section">
+          <div class="section-label">/contact</div>
+          <h2>Connect</h2>
+          <p class="lede">You can view my work, follow updates, and reach out through the links below.</p>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="#">Add GitHub link</a>
+            <a href="mailto:youremail@example.com">Add email</a>
+          </div>
+        </section>
+      </section>
+    </div>
 
-<div class="project">
-<strong>Tesla Stock Analysis</strong><br>
-Financial analysis exploring stock trends, volatility,
-and long-term performance.
-</div>
-
-<div class="project">
-<strong>Cost of Living Data Analysis</strong><br>
-Data analysis exploring inflation, living expenses,
-and economic trends.
-</div>
-
-<div class="project">
-<strong>E-Commerce Customer Dashboard</strong><br>
-Customer analytics dashboard analyzing purchase behavior
-and revenue patterns.
-</div>
-
-<div class="project">
-<strong>WealthIQ Financial Analytics App</strong><br>
-Interactive financial analytics tool designed to help users
-analyze personal financial metrics.
-</div>
-
-<div class="project">
-<strong>Housing Price Analyst Dashboard</strong><br>
-Housing market analysis dashboard exploring price trends,
-regional differences, and affordability metrics.
-</div>
-
-</div>
-
-
-<div class="section">
-<h2>Applications</h2>
-
-<p>
-<strong>WealthIQ Financial Analytics Tool</strong><br>
-<a href="https://yourapp.onrender.com" target="_blank">
-Launch Application
-</a>
-</p>
-
-</div>
-
-
-<div class="section">
-<h2>Contact</h2>
-
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/jardin-gwin" target="_blank">
-linkedin.com/in/jardin-gwin
-</a>
-</p>
-
-</div>
-
-
-</div>
-
+    <div class="footer">© Gwin Analytics</div>
+  </main>
 </body>
 </html>
