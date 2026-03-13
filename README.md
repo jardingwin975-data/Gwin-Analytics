@@ -162,3 +162,4 @@ Future development may include:
 	•	expanded analytics tools
 	•	improved data visualizations
 	•	deeper financial analysis applications
+
