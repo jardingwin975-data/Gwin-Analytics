@@ -343,6 +343,62 @@
       font-size: 0.92rem;
     }
 
+    .library-controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      margin-bottom: 18px;
+    }
+
+    .library-search {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .library-card {
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 190px;
+    }
+
+    .library-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.03rem;
+      letter-spacing: -0.02em;
+    }
+
+    .library-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .library-empty {
+      display: none;
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
     .contact-links {
       display: flex;
       gap: 14px;
@@ -371,7 +427,8 @@
       }
 
       .grid,
-      .app-card {
+      .app-card,
+      .library-grid {
         grid-template-columns: 1fr;
       }
 
@@ -399,6 +456,7 @@
         <a href="#tools">Tools</a>
         <a href="#applications">Applications</a>
         <a href="#dashboards">Power BI</a>
+        <a href="#library">Library</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -515,7 +573,7 @@
                 </div>
               </div>
               <div class="card-links">
-                <a href="#dashboards">View dashboard</a>
+                <a href="#library">View library</a>
               </div>
             </article>
 
@@ -565,6 +623,7 @@
               </div>
               <div class="card-links">
                 <a href="#dashboards">View gallery</a>
+                <a href="#library">View library</a>
               </div>
             </article>
           </div>
@@ -598,7 +657,7 @@
 
         <section id="dashboards" class="panel section">
           <div class="section-label">/power-bi</div>
-          <h2>Power BI Dashboards</h2>
+          <h2>Featured Power BI Dashboards</h2>
           <p class="lede">
             All dashboards are fully interactive. Click charts, filters, and slicers to explore the data.
           </p>
@@ -651,39 +710,26 @@
                 <a href="https://app.powerbi.com/view?r=eyJrIjoiZTMxYWIxMTQtYWJlNy00N2VjLTljNjgtM2UxZWRmYjQ0YjIzIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9" target="_blank" rel="noreferrer">Open full dashboard</a>
               </div>
             </div>
-
-            <div class="dashboard-item">
-              <h3>E-Commerce Customer Behavior Dashboard</h3>
-              <p>Interactive dashboard focused on customer behavior, engagement, and e-commerce patterns.</p>
-              <div class="embed-wrap">
-                <iframe
-                  title="E-Commerce Customer Behavior Dashboard"
-                  src="https://app.powerbi.com/view?r=eyJrIjoiYWZmOGEwYTEtYzU1YS00OTI0LWI5ODctMTRiN2Q4OGJiOGM1IiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9"
-                  allowfullscreen="true"
-                  loading="lazy">
-                </iframe>
-              </div>
-              <div class="dashboard-actions">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYWZmOGEwYTEtYzU1YS00OTI0LWI5ODctMTRiN2Q4OGJiOGM1IiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9" target="_blank" rel="noreferrer">Open full dashboard</a>
-              </div>
-            </div>
-
-            <div class="dashboard-item">
-              <h3>Cost of Living Data From 1990 to 2025</h3>
-              <p>Interactive dashboard tracking long-term cost of living trends from 1990 through 2025.</p>
-              <div class="embed-wrap">
-                <iframe
-                  title="Cost Of Living Data From 1990 to 2025 Dashboard"
-                  src="https://app.powerbi.com/view?r=eyJrIjoiMTllODc5YmYtYjgwNS00ZDZmLThjYjEtZTFkZTUyNDQ4NTZhIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9"
-                  allowfullscreen="true"
-                  loading="lazy">
-                </iframe>
-              </div>
-              <div class="dashboard-actions">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMTllODc5YmYtYjgwNS00ZDZmLThjYjEtZTFkZTUyNDQ4NTZhIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9" target="_blank" rel="noreferrer">Open full dashboard</a>
-              </div>
-            </div>
           </div>
+        </section>
+
+        <section id="library" class="panel section">
+          <div class="section-label">/dashboard-library</div>
+          <h2>Complete Dashboard Library</h2>
+          <p class="lede">
+            Browse the full collection of dashboards and analytics projects. Add new dashboard links to <strong>dashboards.json</strong> and this library updates automatically.
+          </p>
+
+          <div class="library-controls">
+            <input
+              id="dashboardSearch"
+              class="library-search"
+              type="text"
+              placeholder="Search dashboards, topics, and tags..." />
+          </div>
+
+          <div id="libraryGrid" class="library-grid"></div>
+          <p id="libraryEmpty" class="library-empty">No dashboards matched your search.</p>
         </section>
 
         <section id="contact" class="panel section">
@@ -734,6 +780,72 @@
     if (installButtonSecondary) {
       installButtonSecondary.addEventListener("click", handleInstall);
     }
+
+    let allDashboards = [];
+
+    function renderLibrary(items) {
+      const grid = document.getElementById("libraryGrid");
+      const empty = document.getElementById("libraryEmpty");
+
+      grid.innerHTML = "";
+
+      if (!items.length) {
+        empty.style.display = "block";
+        return;
+      }
+
+      empty.style.display = "none";
+
+      items.forEach((item) => {
+        const tags = (item.tags || []).map(tag => `<span>${tag}</span>`).join("");
+
+        const card = document.createElement("article");
+        card.className = "library-card";
+        card.innerHTML = `
+          <div>
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <div class="meta">${tags}</div>
+          </div>
+          <div class="card-links">
+            <a href="${item.embed}" target="_blank" rel="noreferrer">Open dashboard</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    async function loadDashboardLibrary() {
+      try {
+        const response = await fetch("dashboards.json");
+        const data = await response.json();
+        allDashboards = data;
+        renderLibrary(allDashboards);
+      } catch (error) {
+        console.error("Could not load dashboards.json", error);
+      }
+    }
+
+    const searchInput = document.getElementById("dashboardSearch");
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        const term = e.target.value.toLowerCase().trim();
+
+        const filtered = allDashboards.filter(item => {
+          const haystack = [
+            item.title,
+            item.description,
+            ...(item.tags || [])
+          ].join(" ").toLowerCase();
+
+          return haystack.includes(term);
+        });
+
+        renderLibrary(filtered);
+      });
+    }
+
+    loadDashboardLibrary();
   </script>
 </body>
 </html>
