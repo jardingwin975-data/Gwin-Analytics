@@ -30,3 +30,9 @@
     "tags": ["Power BI", "Cost of Living", "Economic Trends", "1990-2025"]
   }
 ]
+{
+  "title": "New Dashboard Name",
+  "description": "Short description here.",
+  "embed": "PASTE_POWER_BI_LINK_HERE",
+  "tags": ["Power BI", "Topic", "Category"]
+}
