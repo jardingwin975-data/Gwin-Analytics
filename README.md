@@ -1,3 +1,10 @@
+# Gwin Analytics
+
+Public analytics platform and portfolio created by Jardin Gwin.
+
+Live site: https://gwinanalytics.com  
+Analytics app: https://app.gwinanalytics.com
+
 Gwin Analytics is a public analytics platform and portfolio built by Jardin Gwin.
 The platform showcases interactive dashboards, analytics applications, and business intelligence projects focused on turning data into practical insights.
 
