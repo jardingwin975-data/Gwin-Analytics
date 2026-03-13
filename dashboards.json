@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Retail Sales Overview Dashboard",
+    "description": "Interactive sales dashboard for revenue trends, product performance, and sales visibility.",
+    "embed": "https://app.powerbi.com/view?r=eyJrIjoiMmM4YWVmNjEtYTY1OS00Mjc0LTgxODUtNDkzNmFiNDMwMzVhIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9",
+    "tags": ["Power BI", "Retail", "Sales", "Analytics"]
+  },
+  {
+    "title": "Tesla Stock Analysis Project",
+    "description": "Interactive financial dashboard analyzing Tesla stock movement, trends, and performance patterns.",
+    "embed": "https://app.powerbi.com/view?r=eyJrIjoiNDMyZTkwMDEtZDk4YS00YjNiLThjYTMtMDkzNzllYmM1MjUzIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9",
+    "tags": ["Power BI", "Finance", "Stocks", "Tesla"]
+  },
+  {
+    "title": "Cost of Living and Income Outcomes for Bachelor’s Degree Holders",
+    "description": "Interactive dashboard exploring cost of living and income outcomes for bachelor’s degree holders ages 25+.",
+    "embed": "https://app.powerbi.com/view?r=eyJrIjoiZTMxYWIxMTQtYWJlNy00N2VjLTljNjgtM2UxZWRmYjQ0YjIzIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9",
+    "tags": ["Power BI", "Cost of Living", "Income", "Education"]
+  },
+  {
+    "title": "E-Commerce Customer Behavior Dashboard",
+    "description": "Interactive dashboard focused on customer behavior, engagement, and e-commerce patterns.",
+    "embed": "https://app.powerbi.com/view?r=eyJrIjoiYWZmOGEwYTEtYzU1YS00OTI0LWI5ODctMTRiN2Q4OGJiOGM1IiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9",
+    "tags": ["Power BI", "E-Commerce", "Customers", "Behavior"]
+  },
+  {
+    "title": "Cost of Living Data From 1990 to 2025",
+    "description": "Interactive dashboard tracking long-term cost of living trends from 1990 through 2025.",
+    "embed": "https://app.powerbi.com/view?r=eyJrIjoiMTllODc5YmYtYjgwNS00ZDZmLThjYjEtZTFkZTUyNDQ4NTZhIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9",
+    "tags": ["Power BI", "Cost of Living", "Economic Trends", "1990-2025"]
+  }
+]
