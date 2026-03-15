@@ -1,163 +1,44 @@
-# Gwin Analytics
-
-Public analytics platform and portfolio created by Jardin Gwin.
-
-Live site: https://gwinanalytics.com  
-Analytics app: https://app.gwinanalytics.com
-
-Gwin Analytics is a public analytics platform and portfolio built by Jardin Gwin.
-The platform showcases interactive dashboards, analytics applications, and business intelligence projects focused on turning data into practical insights.
-
-The project combines data visualization, analytics applications, and portfolio presentation into a single live website.
-
-
-⸻
-
-Overview
-
-Gwin Analytics is designed to demonstrate real-world analytics skills through interactive projects and tools.
-
-The platform includes:
-	•	Interactive Power BI dashboards
-	•	A financial analytics application (WealthIQ)
-	•	A growing dashboard library
-	•	Data research projects
-	•	A professional analytics portfolio
-
-The goal of the platform is to present data work in a way that is clear, usable, and publicly accessible.
-
-⸻
-
-Featured Components
-
-WealthIQ Financial Analytics App
-
-A browser-based financial analytics application that helps users explore financial insights and calculations.
-
-App link:
-https://app.gwinanalytics.com
-
-Features:
-	•	interactive financial tools
-	•	installable web app
-	•	analytics-focused design
-
-⸻
-
-Power BI Dashboard Gallery
-
-Embedded interactive dashboards covering topics such as:
-	•	retail sales analysis
-	•	stock market analysis
-	•	cost-of-living research
-	•	e-commerce analytics
-
-Users can interact with filters, charts, and visualizations directly inside the site.
-
-⸻
-
-Dashboard Library
-
-The site includes a searchable dashboard library powered by a JSON data file.
-
-Features:
-	•	searchable dashboards
-	•	tag filtering
-	•	expandable analytics projects
-
-⸻
-
-Technologies Used
-
-This platform combines web development and analytics tools.
-
-Core technologies include:
-	•	HTML
-	•	CSS
-	•	JavaScript
-	•	JSON data structures
-
-Analytics tools:
-	•	Microsoft Power BI
-	•	Excel
-	•	SQL
-	•	Python
-
-Hosting and deployment:
-	•	GitHub Pages
-	•	Custom domain configuration
-
-⸻
-
-Project Structure
-
-Key files in the repository include:
-
-index.html
-dashboards.json
-favicon.png
-icon-180.png
-icon-192.png
-icon-512.png
-
-Descriptions:
-
-index.html
-Main website and portfolio interface.
-
-dashboards.json
-Dynamic data source used to populate the dashboard library.
-
-icons / favicon
-Used for web app installation and device icons.
-
-⸻
-
-Purpose
-
-The project serves multiple purposes:
-	•	demonstrate analytics and visualization skills
-	•	host a public portfolio of dashboards
-	•	build practical analytics tools
-	•	experiment with data-driven web applications
-
-It represents an effort to go beyond a traditional resume by building a working analytics platform.
-
-⸻
-
-About the Author
-
-Jardin Gwin
-Data Analyst & Analytics Developer
-
-Focus areas:
-	•	data visualization
-	•	business intelligence
-	•	financial analytics
-	•	economic research
-	•	cost-of-living data analysis
-
-Connect with me:
-
-LinkedIn
-https://www.linkedin.com/in/jardin-gwin
-
-GitHub
-https://github.com/jardingwin975-data
-
-⸻
-
-License
-
-This project is intended for portfolio and educational purposes.
-
-⸻
-
-Next Steps for the Platform
-
-Future development may include:
-	•	additional dashboards
-	•	expanded analytics tools
-	•	improved data visualizations
-	•	deeper financial analysis applications
+Gwin Analytics
+Professional Portfolio & Interactive Analytics Hub Author: Jardin Gwin, Data Analyst & Analytics Developer
+Deployment Links: * Main Site: gwinanalytics.com
+•	WealthIQ App: app.gwinanalytics.com
+________________________________________
+Executive Overview
+Gwin Analytics is a centralized hub designed to showcase high-impact business intelligence projects, interactive dashboards, and custom analytics applications. By bridging the gap between raw data and actionable insights, the platform serves as a live demonstration of modern data visualization and web-integrated analytics.
+________________________________________
+Key Components
+WealthIQ Financial Analytics
+A specialized, browser-based application designed for deep-dive financial calculations and trend exploration.
+•	Access: WealthIQ App Interface
+•	Key Features: Interactive financial modeling tools, installable PWA (Progressive Web App) capabilities, and a streamlined, analytics-first UI.
+Interactive Dashboard Gallery
+A curated collection of embedded Power BI reports allowing users to filter and analyze data in real-time. Core focus areas include:
+•	Retail & E-commerce: Sales performance and consumer behavior metrics.
+•	Market Research: Stock market volatility and cost-of-living indices.
+•	Operational Intelligence: Process efficiency and data-driven research projects.
+Dynamic Dashboard Library
+A scalable repository powered by a JSON backend, allowing for seamless navigation of the portfolio.
+•	Functionality: Full-text search, tag-based filtering, and expandable project summaries.
+________________________________________
+Technical Stack
+Category	Technologies
+Analytics & BI	Microsoft Power BI, Excel, SQL, Python
+Development	HTML5, CSS3, JavaScript (ES6+), JSON
+Deployment	GitHub Pages, Custom Domain Management
+________________________________________
+Project Architecture
+•	index.html: The core interface and portfolio engine.
+•	dashboards.json: The dynamic data source driving the library’s metadata.
+•	Assets: Optimized iconography and favicons configured for multi-device web app installation.
+________________________________________
+Professional Objectives
+This platform is a functional alternative to a traditional resume, designed to:
+•	Validate Technical Proficiency: Demonstrating end-to-end data pipeline management.
+•	Host Live Assets: Providing a public-facing sandbox for stakeholders to interact with live dashboards.
+•	Productize Data: Transforming static research into interactive, user-centric web applications.
+________________________________________
+About the Developer
+Jardin Gwin Specializing in Business Intelligence, Financial Analytics, and Economic Research.
+•	LinkedIn: linkedin.com/in/jardin-gwin
+•	GitHub: github.com/jardingwin975-data
 
