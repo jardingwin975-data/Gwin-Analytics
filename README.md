@@ -10,8 +10,6 @@ The platform showcases interactive dashboards, analytics applications, and busin
 
 The project combines data visualization, analytics applications, and portfolio presentation into a single live website.
 
-Live Site:
-https://gwinanalytics.com
 
 ⸻
 
