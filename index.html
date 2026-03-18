@@ -134,6 +134,18 @@
       letter-spacing: -0.045em;
     }
 
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      letter-spacing: -0.02em;
+    }
+
     .title {
       margin: 0 0 14px;
       color: var(--muted);
@@ -196,12 +208,6 @@
       margin-bottom: 8px;
     }
 
-    h2 {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
-      letter-spacing: -0.03em;
-    }
-
     .lede {
       color: var(--muted);
       max-width: 68ch;
@@ -243,12 +249,6 @@
       gap: 14px;
     }
 
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 1.08rem;
-      letter-spacing: -0.02em;
-    }
-
     .card p {
       margin: 0;
       color: var(--muted);
@@ -277,7 +277,9 @@
       margin-top: 6px;
     }
 
-    .card-links a {
+    .card-links a,
+    .dashboard-actions a,
+    .contact-links a {
       font-size: 0.92rem;
       color: var(--accent);
     }
@@ -294,7 +296,9 @@
       background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
     }
 
-    .app-card p {
+    .app-card p,
+    .dashboard-item p,
+    .library-card p {
       margin: 0;
       color: var(--muted);
     }
@@ -328,27 +332,11 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
     }
 
-    .dashboard-item h3 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-    }
-
-    .dashboard-item p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     .dashboard-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin-top: 14px;
-    }
-
-    .dashboard-actions a {
-      color: var(--accent);
-      font-size: 0.92rem;
     }
 
     .library-controls {
@@ -389,18 +377,6 @@
       min-height: 190px;
     }
 
-    .library-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.03rem;
-      letter-spacing: -0.02em;
-    }
-
-    .library-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     .library-empty {
       display: none;
       margin-top: 14px;
@@ -414,8 +390,22 @@
       margin-top: 12px;
     }
 
-    .contact-links a {
-      color: var(--accent);
+    .support-section,
+    .request-box,
+    .process-box {
+      margin-top: 16px;
+    }
+
+    .request-box code {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9rem;
     }
 
     .footer {
@@ -460,6 +450,7 @@
       <div class="brand">Gwin Analytics</div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#history">History</a>
         <a href="#projects">Projects</a>
         <a href="#tools">Tools</a>
         <a href="#applications">Applications</a>
@@ -478,21 +469,19 @@
         </div>
 
         <h2 style="margin:0 0 8px; font-size:1.7rem;">Jardin Gwin</h2>
-        <p class="title">Data Analyst & Analytics Developer</p>
+        <p class="title">Technical Support & Data Analyst</p>
 
         <p class="intro">
-          Building dashboards, analytics applications, and business insights with a focus on practical, public-facing work.
+          Technical support and data analytics focused on solving real business problems through structured workflows and clear insights.
         </p>
 
         <div class="button-row">
-          
           <button class="btn" id="installButton" style="display:none;">Install WealthIQ</button>
-          
         </div>
 
         <div class="mini-list">
           <div>Power BI • Excel • SQL • Python</div>
-          <div>Financial Analytics • Cost of Living • Market Research</div>
+          <div>Technical Troubleshooting • Dashboards • Business Visibility</div>
         </div>
       </aside>
 
@@ -501,7 +490,10 @@
           <div class="section-label">/about</div>
           <h1>Gwin Analytics</h1>
           <p class="lede">
-            I build data dashboards, analytics applications, and business intelligence projects that turn ideas, spreadsheets, and research into something clear, usable, and public.
+            I troubleshoot software issues and build dashboards that give you clear visibility into how your business is performing.
+          </p>
+          <p class="lede" style="margin-top:10px;">
+            Helping small businesses troubleshoot technical issues, improve operational visibility, and make better decisions using data.
           </p>
 
           <div class="skills">
@@ -511,8 +503,20 @@
             <span class="chip">Python</span>
             <span class="chip">Data Visualization</span>
             <span class="chip">Business Analytics</span>
-            <span class="chip">Economic Research</span>
+            <span class="chip">Technical Support</span>
           </div>
+        </section>
+
+        <section id="history" class="panel section">
+          <div class="section-label">/history</div>
+          <h2>History</h2>
+          <p class="lede">
+            Gwin Analytics grew out of hands-on experience in technical support, ticket-based workflows, troubleshooting, and business operations.
+            Over time, that foundation expanded into dashboard development and analytics work focused on helping businesses solve problems and better understand performance.
+          </p>
+          <p class="lede" style="margin-top:10px;">
+            Today, the platform serves as both a portfolio of practical work and a structured consulting system for small businesses that need technical support, reporting clarity, and usable insights.
+          </p>
         </section>
 
         <section id="projects" class="panel section">
@@ -604,7 +608,7 @@
           <div class="section-label">/tools</div>
           <h2>Tools & Platforms</h2>
           <p class="lede">
-            A growing collection of dashboards, analytics tools, and web applications built to make data more usable and interactive.
+            A growing collection of dashboards, analytics tools, and web applications built to make data more usable, interactive, and actionable.
           </p>
 
           <div class="grid">
@@ -650,12 +654,10 @@
             </div>
 
             <div class="button-row" style="margin:0; justify-content:flex-start;">
-  <a class="btn primary" href="https://app.gwinanalytics.com" target="_blank" rel="noreferrer">Launch Application</a>
-
-
-
-  <button class="btn" id="installButtonSecondary" style="display:none;">Install App</button>
-</div>
+              <a class="btn primary" href="https://app.gwinanalytics.com" target="_blank" rel="noreferrer">Launch Application</a>
+              <button class="btn" id="installButtonSecondary" style="display:none;">Install App</button>
+            </div>
+          </div>
 
           <div class="embed-wrap">
             <iframe
@@ -746,65 +748,76 @@
         <section id="contact" class="panel section">
           <div class="section-label">/contact</div>
           <h2>Connect</h2>
-          <p class="lede">You can view my work, follow updates, and reach out through the links below.</p>
+          <p class="lede">
+            You can view my work, follow updates, and reach out through the links below.
+          </p>
 
           <div class="contact-links">
             <a href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://github.com/jardingwin975-data/" target="_blank" rel="noreferrer">GitHub</a>
             <a href="mailto:gwinanalytics@zohomail.com">gwinanalytics@zohomail.com</a>
           </div>
+
+          <div class="support-section">
+            <h3>Need Technical Support or a Business Dashboard?</h3>
+            <p class="lede">
+              I help small businesses troubleshoot software issues, resolve website and application problems,
+              and build simple dashboards that track key metrics like revenue, costs, and performance.
+            </p>
+
+            <div class="request-box">
+              <p><strong>Submit a Request</strong></p>
+
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:gwinanalytics@zohomail.com">gwinanalytics@zohomail.com</a>
+              </p>
+
+              <p>
+                <strong>Subject Format:</strong><br>
+                <code>[Priority] [Issue Type] – Short Description</code>
+              </p>
+
+              <p>
+                <strong>Example:</strong><br>
+                High App outage – Users cannot access app
+              </p>
+
+              <div style="margin-top: 15px;">
+                <a
+                  href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request&body=Business%20Name:%0A%0ACase%20Priority:%20Low%20/%20Medium%20/%20High%20/%20Urgent%0A%0AIssue%20Type:%20Website%20/%20App%20/%20Dashboard%20/%20Software%0A%0ADescription%20of%20Issue:%0A%0AWhen%20did%20the%20issue%20start?:%0A%0AAffected%20link%20or%20page:%0A%0AScreenshots:%0A"
+                  style="
+                    display:inline-block;
+                    padding:10px 18px;
+                    background:#2563eb;
+                    color:#fff;
+                    text-decoration:none;
+                    border-radius:8px;
+                    font-weight:500;
+                  ">
+                  Submit a Request
+                </a>
+              </div>
+            </div>
+
+            <p class="lede" style="margin-top: 14px;">
+              All requests are handled through a structured, ticket-based system.
+            </p>
+
+            <div class="process-box">
+              <h3>How It Works</h3>
+              <p class="lede">
+                1. Submit your request by email<br>
+                2. I review the issue and assess the scope<br>
+                3. You receive next steps and pricing if applicable<br>
+                4. Work begins after confirmation<br>
+                5. All work is completed remotely
+              </p>
+            </div>
+          </div>
         </section>
       </section>
     </div>
-    <div class="support-section" style="margin-top: 30px;">
-  <h3>Need Technical Support or a Business Dashboard?</h3>
-
-  <p class="lede">
-    I help small businesses troubleshoot software issues, resolve website and application problems,
-    and build simple Power BI dashboards to track business performance.
-  </p>
-      <div class="request-box" style="margin-top: 15px;">
-
-  <p><strong>Submit a Request</strong></p>
-
-  <p><strong>Email:</strong> 
-    <a href="mailto:gwinanalytics@zohomail.com">
-      gwinanalytics@zohomail.com
-    </a>
-  </p>
-
-  <p><strong>Subject Format:</strong><br>
-    <code>[Priority] [Issue Type] – Short Description</code>
-  </p>
-
-  <p><strong>Example:</strong><br>
-    High App outage – Users cannot access app
-  </p>
-
-  <!-- BUTTON -->
-  <div style="margin-top: 15px;">
-    <a href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request&body=Business%20Name:%0A%0ACase%20Priority:%20Low%20/%20Medium%20/%20High%20/%20Urgent%0A%0AIssue%20Type:%20Website%20/%20App%20/%20Dashboard%20/%20Software%0A%0ADescription%20of%20Issue:%0A%0AWhen%20did%20the%20issue%20start?:%0A%0AAffected%20link%20or%20page:%0A%0AScreenshots:%0A"
-   style="
-     display:inline-block;
-     padding:10px 18px;
-     background:#2563eb;
-     color:#fff;
-     text-decoration:none;
-     border-radius:8px;
-     font-weight:500;
-   ">
-  Submit a Request
-</a>
-  </div>
-
-</div>
-
-  <p class="lede">
-    All requests are handled through a structured, ticket-based system.
-  </p>
-
-  
-</div>
 
     <div class="footer">© Gwin Analytics</div>
   </main>
