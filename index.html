@@ -408,6 +408,70 @@
       font-size: 0.9rem;
     }
 
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .problem-card,
+    .process-step,
+    .cta-box,
+    .urgent-box {
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+
+    .problem-card p,
+    .process-step p,
+    .cta-box p,
+    .urgent-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(96,165,250,0.25);
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-box {
+      margin-top: 18px;
+      background: linear-gradient(180deg, rgba(96,165,250,0.10), rgba(255,255,255,0.02));
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .urgent-box {
+      margin-top: 18px;
+      background: linear-gradient(180deg, rgba(96,165,250,0.09), rgba(255,255,255,0.02));
+    }
+
     .footer {
       color: var(--muted);
       text-align: center;
@@ -426,7 +490,9 @@
 
       .grid,
       .app-card,
-      .library-grid {
+      .library-grid,
+      .problem-grid,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
@@ -450,6 +516,7 @@
       <div class="brand">Gwin Analytics</div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#problems">Problems I Solve</a>
         <a href="#history">History</a>
         <a href="#projects">Projects</a>
         <a href="#tools">Tools</a>
@@ -504,6 +571,74 @@
             <span class="chip">Data Visualization</span>
             <span class="chip">Business Analytics</span>
             <span class="chip">Technical Support</span>
+          </div>
+
+          <div class="cta-box">
+            <h3>Need help with a dashboard, website issue, or business workflow problem?</h3>
+            <p>
+              If something is broken, unclear, or slowing your business down, reach out and I’ll review the issue and help you determine the next step.
+            </p>
+            <div class="cta-actions">
+              <a class="btn primary" href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request">Email Gwin Analytics</a>
+              <a class="btn" href="#contact">View contact options</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="problems" class="panel section">
+          <div class="section-label">/problems-i-solve</div>
+          <h2>Problems I Solve</h2>
+          <p class="lede">
+            I help small businesses solve practical technical and data-related problems that affect visibility, usability, reporting, and day-to-day operations.
+          </p>
+
+          <div class="problem-grid">
+            <article class="problem-card">
+              <h3>Dashboard visuals are confusing</h3>
+              <p>Power BI, Tableau, or Excel reports may work technically but still fail to clearly explain what is happening in the business.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3>Reports have blank visuals or incorrect numbers</h3>
+              <p>I help identify broken calculations, data issues, and reporting problems so the final output is accurate and presentation-ready.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3>Website forms are not submitting properly</h3>
+              <p>If users are filling out forms but requests are not coming through, I can review the issue and help pinpoint what is failing.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3>Users cannot access features or pages</h3>
+              <p>I troubleshoot access issues, broken pages, and feature problems that affect the customer or user experience.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3>Businesses need dashboards built quickly</h3>
+              <p>For meetings, presentations, or stakeholder reviews, I can help turn business data into a cleaner, more usable reporting view.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3>Apps or websites need a better user experience</h3>
+              <p>If users are saying a system feels confusing or difficult to use, I can help review usability problems and improvement opportunities.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3>Workflows are too manual and inefficient</h3>
+              <p>I help businesses think through simple tools, dashboards, and process improvements that save time and reduce confusion.</p>
+            </article>
+
+            <article class="problem-card">
+              <h3>Business owners have data but not clarity</h3>
+              <p>Having data is not enough. I help transform raw information into something decision-makers can actually understand and use.</p>
+            </article>
+          </div>
+
+          <div class="urgent-box">
+            <h3>Urgent Help Available</h3>
+            <p>
+              If you have a dashboard issue before a meeting, a reporting problem that needs fast review, or a technical issue affecting business operations, urgent requests can be reviewed based on current availability.
+            </p>
           </div>
         </section>
 
@@ -746,21 +881,21 @@
         </section>
 
         <div class="panel section">
-  <div class="section-label">/availability</div>
-  <h2>Availability & Scheduling</h2>
-  <p class="lede">
-    Gwin Analytics operates with a limited client capacity to ensure focused, high-quality service.
-  </p>
-  <p class="lede" style="margin-top:10px;">
-    New requests are reviewed during the week, with most active project work scheduled for weekends.
-  </p>
-  <p class="lede" style="margin-top:10px;">
-    To maintain quality and responsiveness, a maximum of <strong>3 active client inquiries</strong> are accepted at a time. If capacity is full, new requests may be scheduled for a later time.
-  </p>
-  <p class="lede" style="margin-top:10px;">
-    <strong>Current Status:</strong> Accepting new inquiries
-  </p>
-</div>
+          <div class="section-label">/availability</div>
+          <h2>Availability & Scheduling</h2>
+          <p class="lede">
+            Gwin Analytics operates with a limited client capacity to ensure focused, high-quality service.
+          </p>
+          <p class="lede" style="margin-top:10px;">
+            New requests are reviewed during the week, with most active project work scheduled for weekends.
+          </p>
+          <p class="lede" style="margin-top:10px;">
+            To maintain quality and responsiveness, a maximum of <strong>3 active client inquiries</strong> are accepted at a time. If capacity is full, new requests may be scheduled for a later time.
+          </p>
+          <p class="lede" style="margin-top:10px;">
+            <strong>Current Status:</strong> Accepting new inquiries
+          </p>
+        </div>
 
         <section id="contact" class="panel section">
           <div class="section-label">/contact</div>
@@ -776,11 +911,18 @@
           </div>
 
           <div class="support-section">
-            <h3>Need Technical Support or a Business Dashboard?</h3>
+            <h3>Need Technical Support, Dashboard Help, or a Business Reporting Solution?</h3>
             <p class="lede">
               I help small businesses troubleshoot software issues, resolve website and application problems,
-              and build simple dashboards that track key metrics like revenue, costs, and performance.
+              improve dashboard clarity, and build simple reporting tools that track key metrics like revenue, costs, and performance.
             </p>
+
+            <div class="urgent-box">
+              <h3>Urgent Request?</h3>
+              <p>
+                If you have a dashboard presentation coming up, a reporting issue that needs immediate review, or a technical problem affecting your business workflow, include <strong>Urgent</strong> in your email subject line and I will review it based on availability.
+              </p>
+            </div>
 
             <div class="request-box">
               <p><strong>Submit a Request</strong></p>
@@ -823,13 +965,43 @@
 
             <div class="process-box">
               <h3>How It Works</h3>
-              <p class="lede">
-                1. Submit your request by email<br>
-                2. I review the issue and assess the scope<br>
-                3. You receive next steps and pricing if applicable<br>
-                4. Work begins after confirmation<br>
-                5. All work is completed remotely
+
+              <div class="process-grid">
+                <div class="process-step">
+                  <div class="step-number">1</div>
+                  <h3>Send your request</h3>
+                  <p>Email your issue, request, or business need with as much detail as possible.</p>
+                </div>
+
+                <div class="process-step">
+                  <div class="step-number">2</div>
+                  <h3>Issue review</h3>
+                  <p>I review the problem, assess the scope, and identify what needs to be fixed, built, or improved.</p>
+                </div>
+
+                <div class="process-step">
+                  <div class="step-number">3</div>
+                  <h3>Next steps</h3>
+                  <p>You receive a response with direction, timeline, and pricing if applicable.</p>
+                </div>
+
+                <div class="process-step">
+                  <div class="step-number">4</div>
+                  <h3>Remote completion</h3>
+                  <p>Once confirmed, the work is completed remotely and tested before handoff.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cta-box">
+              <h3>Ready to get started?</h3>
+              <p>
+                Have an issue with your website, dashboard, report, or business workflow? Reach out and I’ll take a look.
               </p>
+              <div class="cta-actions">
+                <a class="btn primary" href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request">Email Now</a>
+                <a class="btn" href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+              </div>
             </div>
           </div>
         </section>
