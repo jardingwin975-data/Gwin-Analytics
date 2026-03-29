@@ -476,6 +476,75 @@
       background: linear-gradient(180deg, rgba(96,165,250,0.09), rgba(255,255,255,0.02));
     }
 
+    .excel-project-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .excel-project-card {
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display: grid;
+      gap: 18px;
+    }
+
+    .excel-project-top {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .excel-project-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .excel-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .excel-list li {
+      margin-bottom: 8px;
+    }
+
+    .excel-preview {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0b0f14;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .excel-preview img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .excel-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .excel-note {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
     .footer {
       color: var(--muted);
       text-align: center;
@@ -496,7 +565,8 @@
       .app-card,
       .library-grid,
       .problem-grid,
-      .process-grid {
+      .process-grid,
+      .excel-project-top {
         grid-template-columns: 1fr;
       }
 
@@ -520,6 +590,7 @@
       <div class="brand">Gwin Analytics</div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#excel-projects">Excel Projects</a>
         <a href="#problems">Problems</a>
         <a href="#history">History</a>
         <a href="#projects">Projects</a>
@@ -544,6 +615,10 @@
 
         <p class="intro">
           I help small businesses fix tech issues, improve data visibility, and build simple systems that keep operations running smoother.
+        </p>
+
+        <p class="intro" style="margin-top:-8px;">
+          I also build Excel-based reporting projects that turn raw datasets into clear visual insights for business and research use.
         </p>
 
         <div class="button-row">
@@ -575,6 +650,10 @@
             <span class="chip">Data Visualization</span>
             <span class="chip">Business Analytics</span>
             <span class="chip">Technical Support</span>
+            <span class="chip">Power Query</span>
+            <span class="chip">Pivot Tables</span>
+            <span class="chip">VLOOKUP</span>
+            <span class="chip">Excel Reporting</span>
           </div>
 
           <div class="cta-box">
@@ -586,6 +665,112 @@
               <a class="btn primary" href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request">Email Gwin Analytics</a>
               <a class="btn" href="#contact">View contact options</a>
             </div>
+          </div>
+        </section>
+
+        <section id="excel-projects" class="panel section">
+          <div class="section-label">/excel-projects</div>
+          <h2>Excel Data Analysis Projects</h2>
+          <p class="lede">
+            I specialize in Excel-based data analysis and reporting. My workflow includes cleaning raw datasets, structuring data with Power Query, and building pivot tables, charts, and visual summaries to identify trends and support decision-making.
+          </p>
+          <p class="lede" style="margin-top:10px;">
+            These projects show how I take raw data from credible sources, prepare it for analysis, and turn it into clear reporting outputs that help communicate what the data is doing.
+          </p>
+
+          <div class="excel-project-grid">
+            <article class="excel-project-card">
+              <div class="excel-project-top">
+                <div>
+                  <h3>Cost of Living Analysis</h3>
+                  <p>
+                    Excel-based reporting project analyzing global cost-of-living data across categories such as rent, food, transportation, and healthcare.
+                  </p>
+
+                  <div class="meta" style="margin-top:14px;">
+                    <span>Excel</span>
+                    <span>Power Query</span>
+                    <span>Pivot Tables</span>
+                    <span>VLOOKUP</span>
+                    <span>Economic Data</span>
+                  </div>
+
+                  <h3 style="margin-top:18px;">Project Workflow</h3>
+                  <ul class="excel-list">
+                    <li>Imported and reviewed raw cost-of-living data from a credible public dataset</li>
+                    <li>Cleaned and structured the data in Excel and Power Query</li>
+                    <li>Prepared reporting-ready tables for comparison and analysis</li>
+                    <li>Created charts and visual summaries to highlight patterns across countries</li>
+                  </ul>
+
+                  <h3 style="margin-top:18px;">Key Insights</h3>
+                  <ul class="excel-list">
+                    <li>Rent showed the largest variation across countries, highlighting major regional cost differences</li>
+                    <li>Transportation and food costs fluctuated more than healthcare across the dataset</li>
+                    <li>Some countries showed consistently higher combined cost levels across multiple categories</li>
+                  </ul>
+
+                  <div class="excel-actions">
+                    <a class="btn primary" href="world_cost_of_living_quality_of_life_2024_2025_polished.xlsx" download>Download Excel Project</a>
+                    <a class="btn" href="#contact">Ask about this workflow</a>
+                  </div>
+
+                  <p class="excel-note">
+                    This project demonstrates my ability to clean, structure, and analyze real-world datasets in Excel to produce clear reporting outputs.
+                  </p>
+                </div>
+
+                <div class="excel-preview">
+                  <img src="excel-cost-of-living-preview.png" alt="Cost of Living Excel Project Preview">
+                </div>
+              </div>
+            </article>
+
+            <article class="excel-project-card">
+              <div class="excel-project-top">
+                <div>
+                  <h3>BLS Unemployment Analysis</h3>
+                  <p>
+                    Excel-based analysis of Bureau of Labor Statistics data to identify unemployment trends across industries and support visual reporting.
+                  </p>
+
+                  <div class="meta" style="margin-top:14px;">
+                    <span>Excel</span>
+                    <span>Power Query</span>
+                    <span>Pivot Tables</span>
+                    <span>BLS Data</span>
+                    <span>Trend Analysis</span>
+                  </div>
+
+                  <h3 style="margin-top:18px;">Project Workflow</h3>
+                  <ul class="excel-list">
+                    <li>Imported public labor market data from the Bureau of Labor Statistics</li>
+                    <li>Cleaned and transformed the dataset into a structured reporting format</li>
+                    <li>Used pivot tables and charts to compare industry-level unemployment trends</li>
+                    <li>Prepared visual outputs to make the results easier to understand and present</li>
+                  </ul>
+
+                  <h3 style="margin-top:18px;">Key Insights</h3>
+                  <ul class="excel-list">
+                    <li>Unemployment levels varied significantly across industries</li>
+                    <li>Some sectors showed greater volatility over time than others</li>
+                    <li>Visual reporting made industry comparisons easier to interpret at a glance</li>
+                  </ul>
+
+                  <div class="excel-actions">
+                    <a class="btn" href="#contact">Project available on request</a>
+                  </div>
+
+                  <p class="excel-note">
+                    Additional Excel reporting projects will continue to be added here as they are completed and organized.
+                  </p>
+                </div>
+
+                <div class="excel-preview">
+                  <img src="bls-unemployment-preview.png" alt="BLS Unemployment Excel Project Preview">
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -662,6 +847,19 @@
           <h2>Selected Projects</h2>
 
           <div class="grid">
+            <article class="card">
+              <div>
+                <h3>Excel Reporting Projects</h3>
+                <p>Excel-based data analysis projects focused on cleaning raw datasets, building visual reports, and presenting trends through structured reporting.</p>
+                <div class="meta">
+                  <span>Excel</span><span>Power Query</span><span>Reporting</span>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="#excel-projects">View Excel projects</a>
+              </div>
+            </article>
+
             <article class="card">
               <div>
                 <h3>Retail Sales Dashboard</h3>
