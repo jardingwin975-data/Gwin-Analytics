@@ -545,6 +545,65 @@
       color: var(--muted);
     }
 
+    .bls-card {
+      position: relative;
+      background:
+        radial-gradient(circle at top right, rgba(96,165,250,0.10), transparent 35%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    }
+
+    .bls-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(96,165,250,0.12);
+      border: 1px solid rgba(96,165,250,0.24);
+      color: #93c5fd;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .bls-highlight-box {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(96,165,250,0.16);
+      background: linear-gradient(180deg, rgba(96,165,250,0.10), rgba(255,255,255,0.02));
+    }
+
+    .bls-highlight-box h4 {
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .bls-highlight-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .excel-preview {
+      min-height: 260px;
+    }
+
+    .excel-preview img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #0b0f14;
+    }
+
+    .excel-preview img:hover {
+      transform: scale(1.02);
+      transition: transform 0.25s ease;
+    }
+
     .footer {
       color: var(--muted);
       text-align: center;
@@ -675,7 +734,7 @@
             I specialize in Excel-based data analysis and reporting. My workflow includes cleaning raw datasets, structuring data with Power Query, and building pivot tables, charts, and visual summaries to identify trends and support decision-making.
           </p>
           <p class="lede" style="margin-top:10px;">
-            These projects show how I take raw data from credible sources, prepare it for analysis, and turn it into clear reporting outputs that help communicate what the data is doing.
+            These projects show how I take raw data from credible sources, prepare it for analysis, and turn it into clear reporting outputs that help communicate trends, comparisons, and decision-ready insights.
           </p>
 
           <div class="excel-project-grid">
@@ -683,8 +742,7 @@
               <div class="excel-project-top">
                 <div>
                   <h3>Cost of Living Analysis</h3>
-                  <p style="font-size:13px; opacity:0.8;">
-Includes cleaned dataset, pivot tables, and visual reporting outputs </p>
+                  <p style="font-size:13px; opacity:0.8;">Includes cleaned dataset, pivot tables, and visual reporting outputs</p>
                   <p>
                     Excel-based reporting project analyzing global cost-of-living data across categories such as rent, food, transportation, and healthcare.
                   </p>
@@ -713,8 +771,7 @@ Includes cleaned dataset, pivot tables, and visual reporting outputs </p>
                   </ul>
 
                   <div class="excel-actions">
-                   <a class="btn primary" href="cost-of-living-analysis.xlsx" download>
-  Download Excel Project </a>
+                    <a class="btn primary" href="cost-of-living-analysis.xlsx" download>Download Excel Project</a>
                     <a class="btn" href="#contact">Ask about this workflow</a>
                   </div>
 
@@ -729,12 +786,17 @@ Includes cleaned dataset, pivot tables, and visual reporting outputs </p>
               </div>
             </article>
 
-            <article class="excel-project-card">
+            <article class="excel-project-card bls-card">
               <div class="excel-project-top">
                 <div>
+                  <div class="bls-badge">Bureau of Labor Statistics • Economic Reporting Project</div>
+
                   <h3>BLS Unemployment Analysis</h3>
+                  <p style="font-size:13px; opacity:0.8;">
+                    Includes cleaned dataset, structured reporting views, and unemployment trend analysis by industry and demographic category
+                  </p>
                   <p>
-                    Excel-based analysis of Bureau of Labor Statistics data to identify unemployment trends across industries and support visual reporting.
+                    Excel-based analysis of Bureau of Labor Statistics data used to examine unemployment trends across industries, compare year-over-year changes, and highlight demographic differences in unemployment rates.
                   </p>
 
                   <div class="meta" style="margin-top:14px;">
@@ -742,35 +804,45 @@ Includes cleaned dataset, pivot tables, and visual reporting outputs </p>
                     <span>Power Query</span>
                     <span>Pivot Tables</span>
                     <span>BLS Data</span>
-                    <span>Trend Analysis</span>
+                    <span>Economic Reporting</span>
                   </div>
 
                   <h3 style="margin-top:18px;">Project Workflow</h3>
                   <ul class="excel-list">
                     <li>Imported public labor market data from the Bureau of Labor Statistics</li>
-                    <li>Cleaned and transformed the dataset into a structured reporting format</li>
-                    <li>Used pivot tables and charts to compare industry-level unemployment trends</li>
-                    <li>Prepared visual outputs to make the results easier to understand and present</li>
+                    <li>Cleaned and structured the raw dataset into a reporting-ready Excel format</li>
+                    <li>Standardized column names and organized data into analysis sections</li>
+                    <li>Built industry, year-over-year, and demographic reporting views</li>
+                    <li>Created charts to communicate unemployment trends more clearly</li>
                   </ul>
 
                   <h3 style="margin-top:18px;">Key Insights</h3>
                   <ul class="excel-list">
-                    <li>Unemployment levels varied significantly across industries</li>
-                    <li>Some sectors showed greater volatility over time than others</li>
-                    <li>Visual reporting made industry comparisons easier to interpret at a glance</li>
+                    <li>Unemployment rates vary significantly across industries rather than moving uniformly</li>
+                    <li>Some sectors show greater year-over-year volatility than others</li>
+                    <li>Demographic comparisons reveal differences in unemployment rates between men and women across industries</li>
+                    <li>Structured visual reporting makes labor market trends easier to interpret and compare</li>
                   </ul>
 
-                  <div class="excel-actions">
-                    <a class="btn" href="#contact">Project available on request</a>
+                  <div class="bls-highlight-box">
+                    <h4>What this project demonstrates</h4>
+                    <p>
+                      This project highlights my ability to work with public economic data, structure it into reporting-ready formats, and communicate labor market trends through Excel-based analysis.
+                    </p>
+                  </div>
+
+                  <div class="excel-actions" style="margin-top:16px;">
+                    <a class="btn primary" href="BLS_Unemployment_Analysis_Final_Enhanced.xlsx" download>Download Excel Project</a>
+                    <a class="btn" href="#contact">Ask about this workflow</a>
                   </div>
 
                   <p class="excel-note">
-                    Additional Excel reporting projects will continue to be added here as they are completed and organized.
+                    This workbook includes an overview dashboard, cleaned data, and multiple analysis views for industry, year-over-year, and demographic reporting.
                   </p>
                 </div>
 
                 <div class="excel-preview">
-                  <img src="bls-unemployment-preview.png" alt="BLS Unemployment Excel Project Preview">
+                  <img src="bls-overview.png" alt="BLS Unemployment Excel Project Preview">
                 </div>
               </div>
             </article>
