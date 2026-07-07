@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -594,10 +596,10 @@
           Gwin Analytics handles project requests, updates, report delivery, and follow-up questions by email. This keeps every project clear, documented, and easy to track.
         </p>
 
-        <a>
+        <a
           class="email-line"
-          href="mailto:contact@gwinanalytics.com?subject=Business%20Insight%20Snapshot%20Request&body=Business%20Name:%0AWebsite:%0AIndustry:%0ALocation:%0AWhat%20would%20you%20like%20to%20better%20understand%20about%20your%20customers,%20competitors,%20pricing,%20reviews,%20or%20market?:%0A">
-          insights@gwinanalytics.com
+          href="mailto:gwinanalytics@zohomail.com?subject=Business%20Insight%20Snapshot%20Request&body=Business%20Name:%0AWebsite:%0AIndustry:%0ALocation:%0AWhat%20would%20you%20like%20to%20better%20understand%20about%20your%20customers,%20competitors,%20pricing,%20reviews,%20or%20market?:%0A">
+          gwinanalytics@zohomail.com
         </a>
 
         <p class="note">
@@ -605,9 +607,9 @@
         </p>
 
         <div class="hero-actions">
-          <a>
+          <a
             class="btn primary"
-            href="mailto:contact@gwinanalytics.com?subject=Business%20Insight%20Snapshot%20Request&body=Business%20Name:%0AWebsite:%0AIndustry:%0ALocation:%0AWhat%20would%20you%20like%20to%20better%20understand%20about%20your%20customers,%20competitors,%20pricing,%20reviews,%20or%20market?:%0A">
+            href="mailto:gwinanalytics@zohomail.com?subject=Business%20Insight%20Snapshot%20Request&body=Business%20Name:%0AWebsite:%0AIndustry:%0ALocation:%0AWhat%20would%20you%20like%20to%20better%20understand%20about%20your%20customers,%20competitors,%20pricing,%20reviews,%20or%20market?:%0A">
             Send a Project Request
           </a>
           <a class="btn" href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">
@@ -623,3 +625,8 @@
   </main>
 </body>
 </html>
+'''
+
+path = Path("/mnt/data/gwin-analytics-updated-index.html")
+path.write_text(html, encoding="utf-8")
+path
