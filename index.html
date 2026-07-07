@@ -1,20 +1,19 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = r'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gwin Analytics | Small Business Tech, Data & Workflow Support</title>
+
+  <title>Gwin Analytics | Market Research & Business Insights</title>
   <meta
     name="description"
-    content="Gwin Analytics helps small businesses fix tech issues, improve data visibility, and build simple systems that make operations run smoother."
+    content="Gwin Analytics helps businesses understand their customers, competitors, pricing, reviews, and market opportunities through simple research reports and clear business insights."
   />
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#0d1117">
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png" />
 
   <style>
     :root {
@@ -26,423 +25,295 @@
       --line: #232b36;
       --accent: #60a5fa;
       --accent-soft: rgba(96, 165, 250, 0.12);
-      --max: 1040px;
+      --max: 1080px;
       --radius: 18px;
-      --shadow: 0 12px 40px rgba(0,0,0,0.28);
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #0b0f14 0%, #0d1117 100%);
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.10), transparent 32rem),
+        linear-gradient(180deg, #0b0f14 0%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
-      color: var(--text);
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover { color: var(--accent); }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px 20px 64px;
+    a:hover {
+      color: var(--accent);
     }
 
     .nav {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(13, 17, 23, 0.72);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(13, 17, 23, 0.78);
+      backdrop-filter: blur(12px);
     }
 
     .nav-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 15px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 18px;
     }
 
     .brand {
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      font-weight: 800;
+      letter-spacing: -0.03em;
       font-size: 1.05rem;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 22px 70px;
     }
 
     .hero {
+      padding: 78px 0 42px;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
-      align-items: start;
-      margin-top: 28px;
+      align-items: center;
     }
 
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border: 1px solid rgba(96, 165, 250, 0.25);
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #bfdbfe;
+      font-size: 0.84rem;
+      font-weight: 650;
     }
 
-    .profile {
-      padding: 26px;
-      position: sticky;
-      top: 84px;
-    }
-
-    .avatar {
-      width: 165px;
-      height: 200px;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      border: 2px solid rgba(96,165,250,0.55);
-      box-shadow:
-        0 0 0 4px rgba(96,165,250,0.08),
-        0 10px 25px rgba(0,0,0,0.35);
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 25%;
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2.3rem, 4vw, 4rem);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
+      margin-bottom: 18px;
+      font-size: clamp(2.45rem, 6vw, 5.1rem);
     }
 
     h2 {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
-      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
     }
 
     h3 {
-      margin: 0 0 8px;
-      font-size: 1.08rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      font-size: 1.12rem;
     }
 
-    .title {
-      margin: 0 0 14px;
+    p {
+      margin: 0;
+    }
+
+    .lede {
+      max-width: 68ch;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 1.06rem;
     }
 
-    .intro {
-      color: var(--muted);
-      margin: 0 0 22px;
-    }
-
-    .button-row {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
+      gap: 12px;
+      margin-top: 26px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 14px;
-      border-radius: 12px;
+      min-height: 44px;
+      padding: 10px 16px;
       border: 1px solid var(--line);
+      border-radius: 12px;
       background: var(--panel-2);
       color: var(--text);
-      font-size: 0.95rem;
-      cursor: pointer;
+      font-size: 0.96rem;
+      font-weight: 650;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(96, 165, 250, 0.45);
+      color: var(--text);
     }
 
     .btn.primary {
       background: var(--accent);
-      color: #08111f;
       border-color: transparent;
-      font-weight: 700;
+      color: #08111f;
     }
 
-    .mini-list {
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .hero-card,
+    .section,
+    .mini-card,
+    .service-card,
+    .step-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.012));
+      box-shadow: var(--shadow);
     }
 
-    .content {
-      display: grid;
-      gap: 18px;
-    }
-
-    .section {
+    .hero-card {
       padding: 26px;
     }
 
-    .section-label {
-      color: var(--muted);
-      font-size: 0.86rem;
-      text-transform: lowercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
+    .hero-card h2 {
+      font-size: 1.45rem;
     }
 
-    .lede {
-      color: var(--muted);
-      max-width: 68ch;
-      margin: 0;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .chip {
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.02);
-      color: var(--text);
-      font-size: 0.92rem;
-    }
-
-    .grid {
+    .hero-card ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 14px;
-    }
-
-    .card {
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      min-height: 182px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .meta span {
-      font-size: 0.8rem;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      padding: 6px 8px;
-      border-radius: 999px;
-    }
-
-    .card-links {
-      display: flex;
       gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 6px;
     }
 
-    .card-links a,
-    .dashboard-actions a,
-    .contact-links a {
-      font-size: 0.92rem;
+    .hero-card li {
+      color: var(--muted);
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
       color: var(--accent);
+      font-weight: 800;
     }
 
-    .app-card {
+    .section {
+      padding: 30px;
+      margin-top: 22px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .process-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      align-items: center;
-      margin-top: 14px;
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(96,165,250,0.08), rgba(255,255,255,0.02));
-    }
-
-    .app-card p,
-    .dashboard-item p,
-    .library-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .embed-wrap {
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
-      background: #0b0f14;
-    }
-
-    .embed-wrap iframe {
-      width: 100%;
-      height: 750px;
-      border: 0;
-      display: block;
-      background: #0b0f14;
-    }
-
-    .dashboard-stack {
-      display: grid;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .dashboard-item {
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    }
-
-    .dashboard-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    .library-controls {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-      margin-bottom: 18px;
-    }
-
-    .library-search {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: var(--panel-2);
-      color: var(--text);
-      font-size: 0.95rem;
-      outline: none;
-    }
-
-    .library-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
-      margin-top: 12px;
+      margin-top: 20px;
     }
 
-    .library-card {
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 14px;
-      min-height: 190px;
-    }
-
-    .library-empty {
-      display: none;
-      margin-top: 14px;
-      color: var(--muted);
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .support-section,
-    .request-box,
-    .process-box {
-      margin-top: 16px;
-    }
-
-    .request-box code {
-      display: inline-block;
-      margin-top: 6px;
-      padding: 6px 8px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      color: var(--text);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.9rem;
-    }
-
-    .problem-grid {
-      display: grid;
+    .grid-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
     }
 
-    .problem-card,
-    .process-step,
-    .cta-box,
-    .urgent-box {
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    }
-
-    .problem-card p,
-    .process-step p,
-    .cta-box p,
-    .urgent-box p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .process-grid {
-      display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
+    }
+
+    .mini-card,
+    .service-card,
+    .step-card {
+      padding: 20px;
+      box-shadow: none;
+    }
+
+    .mini-card p,
+    .service-card p,
+    .step-card p,
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .service-card {
+      min-height: 175px;
+    }
+
+    .deliverables {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .deliverable {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.018);
+    }
+
+    .deliverable strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 8px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(96, 165, 250, 0.10);
     }
 
     .step-number {
@@ -451,981 +322,311 @@
       justify-content: center;
       width: 34px;
       height: 34px;
+      margin-bottom: 13px;
       border-radius: 999px;
+      border: 1px solid rgba(96, 165, 250, 0.25);
       background: var(--accent-soft);
-      border: 1px solid rgba(96,165,250,0.25);
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .contact-card {
+      padding: 24px;
+      margin-top: 18px;
+      box-shadow: none;
+      background:
+        radial-gradient(circle at top right, rgba(96, 165, 250, 0.12), transparent 22rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.012));
+    }
+
+    .email-line {
+      display: inline-flex;
+      margin-top: 12px;
       color: var(--accent);
       font-weight: 700;
-      margin-bottom: 12px;
     }
 
-    .cta-box {
-      margin-top: 18px;
-      background: linear-gradient(180deg, rgba(96,165,250,0.10), rgba(255,255,255,0.02));
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .urgent-box {
-      margin-top: 18px;
-      background: linear-gradient(180deg, rgba(96,165,250,0.09), rgba(255,255,255,0.02));
-    }
-
-    .excel-project-grid {
-      display: grid;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .excel-project-card {
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      display: grid;
-      gap: 18px;
-    }
-
-    .excel-project-top {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .excel-project-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .excel-list {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .excel-list li {
-      margin-bottom: 8px;
-    }
-
-    .excel-preview {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: #0b0f14;
-      min-height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .excel-preview img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .excel-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 6px;
-    }
-
-    .excel-note {
-      margin-top: 10px;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .bls-card {
-      position: relative;
-      background:
-        radial-gradient(circle at top right, rgba(96,165,250,0.10), transparent 35%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-    }
-
-    .bls-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(96,165,250,0.12);
-      border: 1px solid rgba(96,165,250,0.24);
-      color: #93c5fd;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    .bls-highlight-box {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(96,165,250,0.16);
-      background: linear-gradient(180deg, rgba(96,165,250,0.10), rgba(255,255,255,0.02));
-    }
-
-    .bls-highlight-box h4 {
-      margin: 0 0 8px;
-      font-size: 0.95rem;
-      color: var(--text);
-    }
-
-    .bls-highlight-box p {
-      margin: 0;
+    .note {
+      margin-top: 12px;
       color: var(--muted);
       font-size: 0.94rem;
-    }
-
-    .excel-preview {
-      min-height: 260px;
-    }
-
-    .excel-preview img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      background: #0b0f14;
-    }
-
-    .excel-preview img:hover {
-      transform: scale(1.02);
-      transition: transform 0.25s ease;
     }
 
     .footer {
       color: var(--muted);
       text-align: center;
-      padding: 28px 0 12px;
+      padding: 30px 0 10px;
       font-size: 0.92rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 880px) {
+      .hero,
+      .grid-2,
+      .grid-3,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero {
-        grid-template-columns: 1fr;
+        padding-top: 50px;
       }
 
-      .profile {
-        position: static;
-      }
-
-      .grid,
-      .app-card,
-      .library-grid,
-      .problem-grid,
-      .process-grid,
-      .excel-project-top {
-        grid-template-columns: 1fr;
-      }
-
-      .embed-wrap iframe {
-        height: 520px;
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
     @media (max-width: 560px) {
-      .wrap { padding: 20px 14px 42px; }
-      .nav-inner { padding: 12px 14px; }
-      .section, .profile { padding: 20px; }
-      h1 { font-size: 2.15rem; }
-      .embed-wrap iframe { height: 460px; }
+      .wrap {
+        padding: 26px 15px 48px;
+      }
+
+      .nav-inner {
+        padding: 13px 15px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .section,
+      .hero-card {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="nav">
+  <header class="nav">
     <div class="nav-inner">
-      <div class="brand">Gwin Analytics</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#excel-projects">Excel Projects</a>
-        <a href="#problems">Problems</a>
-        <a href="#history">History</a>
-        <a href="#projects">Projects</a>
-        <a href="#tools">Tools</a>
-        <a href="#applications">App</a>
-        <a href="#dashboards">Dashboards</a>
-        <a href="#library">Library</a>
+      <a class="brand" href="#home">Gwin Analytics</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#snapshot">Business Insight Snapshot</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Email-first research support for businesses</div>
+
+        <h1>Understand your customers, competitors, pricing, and missed opportunities.</h1>
+
+        <p class="lede">
+          Gwin Analytics helps businesses make smarter decisions through simple research reports and clear business insights. We focus on the market information business owners may not have time to study closely.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:gwinanalytics@zohomail.com?subject=Business%20Insight%20Snapshot%20Request&body=Business%20Name:%0AWebsite:%0AIndustry:%0ALocation:%0AWhat%20would%20you%20like%20to%20better%20understand%20about%20your%20customers,%20competitors,%20pricing,%20reviews,%20or%20market?:%0A">
+            Request a Business Insight Snapshot
+          </a>
+          <a class="btn" href="#snapshot">View the service</a>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <main class="wrap">
-    <div class="hero">
-      <aside class="panel profile">
-        <div class="avatar">
-          <img src="me.jpeg" alt="Jardin Gwin">
-        </div>
-
-        <h2 style="margin:0 0 8px; font-size:1.7rem;">Jardin Gwin</h2>
-        <p class="title">Founder, Gwin Analytics</p>
-
-        <p class="intro">
-          I help small businesses fix tech issues, improve data visibility, and build simple systems that keep operations running smoother.
+      <aside class="hero-card" aria-label="Business Insight Snapshot overview">
+        <h2>Business Insight Snapshot</h2>
+        <p class="lede">
+          A practical report built to show what may be happening around your business.
         </p>
 
-        <p class="intro" style="margin-top:-8px;">
-          I also build Excel-based reporting projects that turn raw datasets into clear visual insights for business and research use.
-        </p>
-
-        <div class="button-row">
-          <button class="btn" id="installButton" style="display:none;">Install WealthIQ</button>
-        </div>
-
-        <div class="mini-list">
-          <div>Power BI • Excel • SQL • Python</div>
-          <div>Technical Troubleshooting • Dashboards • Workflow Support</div>
-        </div>
+        <ul>
+          <li>Customer review and feedback themes</li>
+          <li>Competitor research and positioning</li>
+          <li>Pricing or service comparison when available</li>
+          <li>Online presence and service clarity review</li>
+          <li>Practical recommendations for improvement</li>
+        </ul>
       </aside>
+    </section>
 
-      <section class="content">
-        <section id="about" class="panel section">
-          <div class="section-label">/about</div>
-          <h1>Tech, Data & Workflow Support for Small Businesses</h1>
-          <p class="lede">
-            Gwin Analytics helps small businesses fix technical issues, improve visibility into their data, and build simple systems that make day-to-day operations run smoother.
-          </p>
-          <p class="lede" style="margin-top:10px;">
-            From broken forms and reporting problems to dashboards and workflow cleanup, I provide practical support for businesses that need clarity without adding a full internal IT or analytics team.
-          </p>
+    <section id="snapshot" class="section">
+      <div class="section-label">Main Service</div>
+      <h2>Business Insight Snapshot</h2>
 
-          <div class="skills">
-            <span class="chip">Power BI</span>
-            <span class="chip">Excel</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Python</span>
-            <span class="chip">Data Visualization</span>
-            <span class="chip">Business Analytics</span>
-            <span class="chip">Technical Support</span>
-            <span class="chip">Power Query</span>
-            <span class="chip">Pivot Tables</span>
-            <span class="chip">VLOOKUP</span>
-            <span class="chip">Excel Reporting</span>
+      <p class="lede">
+        Many business owners are busy handling daily operations, customers, staffing, scheduling, and sales. Because of that, important market signals can get missed.
+      </p>
+
+      <p class="lede" style="margin-top: 10px;">
+        The Business Insight Snapshot helps fill that gap by reviewing customer feedback, competitors, pricing, services, reviews, and local market opportunities in a clear, easy-to-read report.
+      </p>
+
+      <div class="deliverables">
+        <div class="deliverable">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <strong>Customer Insight Review</strong>
+            <p class="lede">Review customer comments, Google reviews, complaints, praise, and repeated themes.</p>
           </div>
-
-          <div class="cta-box">
-            <h3>Need help with a dashboard, website issue, or workflow problem?</h3>
-            <p>
-              If something is broken, unclear, or slowing your business down, send over the issue and I’ll review it with you and help determine the best next step.
-            </p>
-            <div class="cta-actions">
-              <a class="btn primary" href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request">Email Gwin Analytics</a>
-              <a class="btn" href="#contact">View contact options</a>
-            </div>
-          </div>
-        </section>
-
-        <section id="excel-projects" class="panel section">
-          <div class="section-label">/excel-projects</div>
-          <h2>Excel Data Analysis Projects</h2>
-          <p class="lede">
-            I specialize in Excel-based data analysis and reporting. My workflow includes cleaning raw datasets, structuring data with Power Query, and building pivot tables, charts, and visual summaries to identify trends and support decision-making.
-          </p>
-          <p class="lede" style="margin-top:10px;">
-            These projects show how I take raw data from credible sources, prepare it for analysis, and turn it into clear reporting outputs that help communicate trends, comparisons, and decision-ready insights.
-          </p>
-
-          <div class="excel-project-grid">
-            <article class="excel-project-card">
-              <div class="excel-project-top">
-                <div>
-                  <h3>Cost of Living Analysis</h3>
-                  <p style="font-size:13px; opacity:0.8;">Includes cleaned dataset, pivot tables, and visual reporting outputs</p>
-                  <p>
-                    Excel-based reporting project analyzing global cost-of-living data across categories such as rent, food, transportation, and healthcare.
-                  </p>
-
-                  <div class="meta" style="margin-top:14px;">
-                    <span>Excel</span>
-                    <span>Power Query</span>
-                    <span>Pivot Tables</span>
-                    <span>VLOOKUP</span>
-                    <span>Economic Data</span>
-                  </div>
-
-                  <h3 style="margin-top:18px;">Project Workflow</h3>
-                  <ul class="excel-list">
-                    <li>Imported and reviewed raw cost-of-living data from a credible public dataset</li>
-                    <li>Cleaned and structured the data in Excel and Power Query</li>
-                    <li>Prepared reporting-ready tables for comparison and analysis</li>
-                    <li>Created charts and visual summaries to highlight patterns across countries</li>
-                  </ul>
-
-                  <h3 style="margin-top:18px;">Key Insights</h3>
-                  <ul class="excel-list">
-                    <li>Rent showed the largest variation across countries, highlighting major regional cost differences</li>
-                    <li>Transportation and food costs fluctuated more than healthcare across the dataset</li>
-                    <li>Some countries showed consistently higher combined cost levels across multiple categories</li>
-                  </ul>
-
-                  <div class="excel-actions">
-                    <a class="btn primary" href="cost-of-living-analysis.xlsx" download>Download Excel Project</a>
-                    <a class="btn" href="#contact">Ask about this workflow</a>
-                  </div>
-
-                  <p class="excel-note">
-                    This project demonstrates my ability to clean, structure, and analyze real-world datasets in Excel to produce clear reporting outputs.
-                  </p>
-                </div>
-
-                <div class="excel-preview">
-                  <img src="excel-cost-of-living-preview.png" alt="Cost of Living Excel Project Preview">
-                </div>
-              </div>
-            </article>
-
-            <article class="excel-project-card bls-card">
-              <div class="excel-project-top">
-                <div>
-                  <div class="bls-badge">Bureau of Labor Statistics • Economic Reporting Project</div>
-
-                  <h3>BLS Unemployment Analysis</h3>
-                  <p style="font-size:13px; opacity:0.8;">
-                    Includes cleaned dataset, structured reporting views, and unemployment trend analysis by industry and demographic category
-                  </p>
-                  <p>
-                    Excel-based analysis of Bureau of Labor Statistics data used to examine unemployment trends across industries, compare year-over-year changes, and highlight demographic differences in unemployment rates.
-                  </p>
-
-                  <div class="meta" style="margin-top:14px;">
-                    <span>Excel</span>
-                    <span>Power Query</span>
-                    <span>Pivot Tables</span>
-                    <span>BLS Data</span>
-                    <span>Economic Reporting</span>
-                  </div>
-
-                  <h3 style="margin-top:18px;">Project Workflow</h3>
-                  <ul class="excel-list">
-                    <li>Imported public labor market data from the Bureau of Labor Statistics</li>
-                    <li>Cleaned and structured the raw dataset into a reporting-ready Excel format</li>
-                    <li>Standardized column names and organized data into analysis sections</li>
-                    <li>Built industry, year-over-year, and demographic reporting views</li>
-                    <li>Created charts to communicate unemployment trends more clearly</li>
-                  </ul>
-
-                  <h3 style="margin-top:18px;">Key Insights</h3>
-                  <ul class="excel-list">
-                    <li>Unemployment rates vary significantly across industries rather than moving uniformly</li>
-                    <li>Some sectors show greater year-over-year volatility than others</li>
-                    <li>Demographic comparisons reveal differences in unemployment rates between men and women across industries</li>
-                    <li>Structured visual reporting makes labor market trends easier to interpret and compare</li>
-                  </ul>
-
-                  <div class="bls-highlight-box">
-                    <h4>What this project demonstrates</h4>
-                    <p>
-                      This project highlights my ability to work with public economic data, structure it into reporting-ready formats, and communicate labor market trends through Excel-based analysis.
-                    </p>
-                  </div>
-
-                  <div class="excel-actions" style="margin-top:16px;">
-                    <a class="btn primary" href="BLS_Unemployment_Analysis_Final_Enhanced.xlsx" download>
-  Download Excel Project </a>
-                    <a class="btn" href="#contact">Ask about this workflow</a>
-                  </div>
-
-                  <p class="excel-note">
-                    This workbook includes an overview dashboard, cleaned data, and multiple analysis views for industry, year-over-year, and demographic reporting.
-                  </p>
-                </div>
-
-                <div class="excel-preview">
-                  <img src="bls-overview.png" alt="BLS Unemployment Excel Project Preview">
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="problems" class="panel section">
-          <div class="section-label">/problems-i-solve</div>
-          <h2>Problems I Solve</h2>
-          <p class="lede">
-            I help small businesses solve practical tech, reporting, and workflow problems that affect visibility, usability, and day-to-day operations.
-          </p>
-
-          <div class="problem-grid">
-            <article class="problem-card">
-              <h3>Dashboards are hard to read</h3>
-              <p>Reports may be technically functional but still fail to clearly show what is happening in the business.</p>
-            </article>
-
-            <article class="problem-card">
-              <h3>Reports show blank visuals or incorrect numbers</h3>
-              <p>I help identify broken calculations, bad data relationships, and reporting issues so your numbers are accurate and presentation-ready.</p>
-            </article>
-
-            <article class="problem-card">
-              <h3>Website forms are not coming through</h3>
-              <p>If users are submitting forms but requests are not being received, I can review the setup and help pinpoint the failure.</p>
-            </article>
-
-            <article class="problem-card">
-              <h3>Users cannot access pages or features</h3>
-              <p>I troubleshoot broken pages, access issues, and feature problems that affect the customer or user experience.</p>
-            </article>
-
-            <article class="problem-card">
-              <h3>A dashboard is needed quickly</h3>
-              <p>For meetings, presentations, or stakeholder reviews, I can help turn business data into a cleaner, more usable reporting view.</p>
-            </article>
-
-            <article class="problem-card">
-              <h3>Apps or websites feel confusing to use</h3>
-              <p>If users are getting stuck or saying a system feels hard to use, I can review usability issues and identify improvement opportunities.</p>
-            </article>
-
-            <article class="problem-card">
-              <h3>Workflows are too manual</h3>
-              <p>I help businesses simplify repetitive processes with better reporting, clearer systems, and practical workflow improvements.</p>
-            </article>
-
-            <article class="problem-card">
-              <h3>You have data but not clarity</h3>
-              <p>Having numbers is not enough. I help turn raw business data into something decision-makers can actually understand and use.</p>
-            </article>
-          </div>
-
-          <div class="urgent-box">
-            <h3>Urgent Help Available</h3>
-            <p>
-              If you have a dashboard issue before a meeting, a reporting problem that needs quick review, or a technical issue affecting operations, urgent requests can be reviewed based on current availability.
-            </p>
-          </div>
-        </section>
-
-        <section id="history" class="panel section">
-          <div class="section-label">/history</div>
-          <h2>History</h2>
-          <p class="lede">
-            Gwin Analytics grew out of hands-on experience in technical support, ticket-based workflows, troubleshooting, and business operations. Over time, that foundation expanded into dashboard development and analytics work focused on helping businesses solve problems and better understand performance.
-          </p>
-          <p class="lede" style="margin-top:10px;">
-            Today, Gwin Analytics provides practical support for small businesses that need help with technical issues, reporting clarity, and simple systems that work.
-          </p>
-        </section>
-
-        <section id="projects" class="panel section">
-          <div class="section-label">/projects</div>
-          <h2>Selected Projects</h2>
-
-          <div class="grid">
-            <article class="card">
-              <div>
-                <h3>Excel Reporting Projects</h3>
-                <p>Excel-based data analysis projects focused on cleaning raw datasets, building visual reports, and presenting trends through structured reporting.</p>
-                <div class="meta">
-                  <span>Excel</span><span>Power Query</span><span>Reporting</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="#excel-projects">View Excel projects</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div>
-                <h3>Retail Sales Dashboard</h3>
-                <p>Interactive dashboard built to show revenue trends, product performance, and sales visibility for faster decision-making.</p>
-                <div class="meta">
-                  <span>Power BI</span><span>Excel</span><span>Sales Analytics</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="#dashboards">View dashboard</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div>
-                <h3>Tesla Stock Analysis</h3>
-                <p>Financial dashboard project focused on trend analysis, volatility, and long-term performance reporting.</p>
-                <div class="meta">
-                  <span>Finance</span><span>Visualization</span><span>Research</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="#dashboards">View dashboard</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div>
-                <h3>Cost of Living Data Analysis</h3>
-                <p>Interactive research dashboard built to explore affordability, inflation, and consumer expense trends through clear visuals.</p>
-                <div class="meta">
-                  <span>Economic Data</span><span>Research</span><span>Power BI</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="#dashboards">View dashboard</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div>
-                <h3>E-Commerce Customer Dashboard</h3>
-                <p>Dashboard built to analyze purchase behavior, customer engagement, and revenue patterns in a more usable reporting view.</p>
-                <div class="meta">
-                  <span>E-Commerce</span><span>Dashboard</span><span>Analytics</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="#dashboards">View dashboard</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div>
-                <h3>Housing Price Analysis Dashboard</h3>
-                <p>Market research dashboard comparing housing prices, affordability, and location-based trends through interactive reporting.</p>
-                <div class="meta">
-                  <span>Housing</span><span>Market Research</span><span>Power BI</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="#library">View library</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div>
-                <h3>WealthIQ Financial Analytics</h3>
-                <p>Interactive web application built to turn personal finance data into clear, usable financial insights.</p>
-                <div class="meta">
-                  <span>App</span><span>Financial Analytics</span><span>Web</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="https://app.gwinanalytics.com" target="_blank" rel="noreferrer">Open app</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="tools" class="panel section">
-          <div class="section-label">/tools</div>
-          <h2>Tools & Platforms</h2>
-          <p class="lede">
-            A growing set of dashboards, analytics tools, and web applications built to make data easier to understand, use, and act on.
-          </p>
-
-          <div class="grid">
-            <article class="card">
-              <div>
-                <h3>WealthIQ Financial Calculator</h3>
-                <p>Live financial analytics application available on the web and installable on supported devices.</p>
-                <div class="meta">
-                  <span>PWA</span><span>Cloudflare</span><span>Analytics Tool</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="https://app.gwinanalytics.com" target="_blank" rel="noreferrer">Launch</a>
-              </div>
-            </article>
-
-            <article class="card">
-              <div>
-                <h3>Power BI Dashboard Gallery</h3>
-                <p>Interactive dashboards covering sales, finance, cost of living, and e-commerce analysis.</p>
-                <div class="meta">
-                  <span>Power BI</span><span>Embedded</span><span>Portfolio</span>
-                </div>
-              </div>
-              <div class="card-links">
-                <a href="#dashboards">View gallery</a>
-                <a href="#library">View library</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="applications" class="panel section">
-          <div class="section-label">/applications</div>
-          <h2>Featured Application</h2>
-
-          <div class="app-card">
-            <div>
-              <h3 style="margin:0 0 8px; font-size:1.15rem;">WealthIQ Financial Analytics</h3>
-              <p>
-                A live analytics application designed to turn raw financial data into clearer, more interactive insights.
-              </p>
-            </div>
-
-            <div class="button-row" style="margin:0; justify-content:flex-start;">
-              <a class="btn primary" href="https://app.gwinanalytics.com" target="_blank" rel="noreferrer">Launch Application</a>
-              <button class="btn" id="installButtonSecondary" style="display:none;">Install App</button>
-            </div>
-          </div>
-
-          <div class="embed-wrap">
-            <iframe
-              src="https://app.gwinanalytics.com"
-              title="WealthIQ Financial Analytics App"
-              loading="lazy">
-            </iframe>
-          </div>
-        </section>
-
-        <section id="dashboards" class="panel section">
-          <div class="section-label">/power-bi</div>
-          <h2>Featured Power BI Dashboards</h2>
-          <p class="lede">
-            Interactive dashboards built to turn raw data into clear, usable reporting. Click charts, filters, and slicers to explore the data.
-          </p>
-
-          <div class="dashboard-stack">
-            <div class="dashboard-item">
-              <h3>Retail Sales Overview Dashboard</h3>
-              <p>Interactive dashboard built to show revenue trends, product performance, and sales visibility.</p>
-              <div class="embed-wrap">
-                <iframe
-                  title="Retail Sales Overview Dashboard"
-                  src="https://app.powerbi.com/view?r=eyJrIjoiMmM4YWVmNjEtYTY1OS00Mjc0LTgxODUtNDkzNmFiNDMwMzVhIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9"
-                  allowfullscreen="true"
-                  loading="lazy">
-                </iframe>
-              </div>
-              <div class="dashboard-actions">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiMmM4YWVmNjEtYTY1OS00Mjc0LTgxODUtNDkzNmFiNDMwMzVhIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9" target="_blank" rel="noreferrer">Open full dashboard</a>
-              </div>
-            </div>
-
-            <div class="dashboard-item">
-              <h3>Tesla Stock Analysis Project</h3>
-              <p>Interactive financial dashboard built to analyze Tesla stock movement, trends, and performance patterns.</p>
-              <div class="embed-wrap">
-                <iframe
-                  title="Tesla Stock Analysis Project"
-                  src="https://app.powerbi.com/view?r=eyJrIjoiNDMyZTkwMDEtZDk4YS00YjNiLThjYTMtMDkzNzllYmM1MjUzIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9"
-                  allowfullscreen="true"
-                  loading="lazy">
-                </iframe>
-              </div>
-              <div class="dashboard-actions">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiNDMyZTkwMDEtZDk4YS00YjNiLThjYTMtMDkzNzllYmM1MjUzIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9" target="_blank" rel="noreferrer">Open full dashboard</a>
-              </div>
-            </div>
-
-            <div class="dashboard-item">
-              <h3>Cost of Living and Income Outcomes for Bachelor’s Degree Holders</h3>
-              <p>Interactive dashboard exploring cost of living and income outcomes for bachelor’s degree holders ages 25+.</p>
-              <div class="embed-wrap">
-                <iframe
-                  title="Cost of Living and Income Outcomes for Bachelor’s Degree Holders (Ages 25+) Dashboard Report"
-                  src="https://app.powerbi.com/view?r=eyJrIjoiZTMxYWIxMTQtYWJlNy00N2VjLTljNjgtM2UxZWRmYjQ0YjIzIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9"
-                  allowfullscreen="true"
-                  loading="lazy">
-                </iframe>
-              </div>
-              <div class="dashboard-actions">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiZTMxYWIxMTQtYWJlNy00N2VjLTljNjgtM2UxZWRmYjQ0YjIzIiwidCI6ImNmOTU1MmRiLTY2MGEtNGE5MS05YmQ2LTY1YzIzMDBmOWNiMSIsImMiOjF9" target="_blank" rel="noreferrer">Open full dashboard</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="library" class="panel section">
-          <div class="section-label">/dashboard-library</div>
-          <h2>Complete Dashboard Library</h2>
-          <p class="lede">
-            Browse the full collection of dashboards and analytics projects in one place.
-          </p>
-
-          <div class="library-controls">
-            <input
-              id="dashboardSearch"
-              class="library-search"
-              type="text"
-              placeholder="Search dashboards, topics, and tags..." />
-          </div>
-
-          <div id="libraryGrid" class="library-grid"></div>
-          <p id="libraryEmpty" class="library-empty">Dashboard library updates will appear here.</p>
-        </section>
-
-        <div class="panel section">
-          <div class="section-label">/availability</div>
-          <h2>Availability & Scheduling</h2>
-          <p class="lede">
-            Gwin Analytics works with a limited number of clients at a time to provide focused, high-quality support.
-          </p>
-          <p class="lede" style="margin-top:10px;">
-            New requests are reviewed throughout the week, with most active project work scheduled during evening and weekend support hours.
-          </p>
-          <p class="lede" style="margin-top:10px;">
-            To maintain quality and response time, only a small number of active client requests are taken on at once. If capacity is full, new requests may be scheduled for a later start date.
-          </p>
-          <p class="lede" style="margin-top:10px;">
-            <strong>Current Status:</strong> Accepting new inquiries
-          </p>
         </div>
 
-        <section id="contact" class="panel section">
-          <div class="section-label">/contact</div>
-          <h2>Connect</h2>
-          <p class="lede">
-            View my work, connect with me, or reach out about a project, issue, or support request.
-          </p>
-
-          <div class="contact-links">
-            <a href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com/jardingwin975-data/" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="mailto:gwinanalytics@zohomail.com">gwinanalytics@zohomail.com</a>
-          </div>
-
-          <div class="support-section">
-            <h3>Need technical support, dashboard help, or a reporting solution?</h3>
-            <p class="lede">
-              I help small businesses troubleshoot software and website issues, improve dashboard clarity, and build simple reporting tools that track revenue, costs, jobs, and performance.
-            </p>
-
-            <div class="urgent-box">
-              <h3>Urgent Request?</h3>
-              <p>
-                If you have a dashboard presentation coming up, a reporting issue that needs immediate review, or a technical problem affecting your workflow, include <strong>Urgent</strong> in your email subject line and I will review it based on availability.
-              </p>
-            </div>
-
-            <div class="request-box">
-              <p><strong>Submit a Request</strong></p>
-
-              <p>
-                <strong>Email:</strong>
-                <a href="mailto:gwinanalytics@zohomail.com">gwinanalytics@zohomail.com</a>
-              </p>
-
-              <p>
-                <strong>Subject Format:</strong><br>
-                <code>[Priority] [Issue Type] – Short Description</code>
-              </p>
-
-              <p>
-                <strong>Example:</strong><br>
-                High App outage – Users cannot access app
-              </p>
-
-              <div style="margin-top: 15px;">
-                <a
-                  href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request&body=Business%20Name:%0A%0ACase%20Priority:%20Low%20/%20Medium%20/%20High%20/%20Urgent%0A%0AIssue%20Type:%20Website%20/%20App%20/%20Dashboard%20/%20Software%0A%0ADescription%20of%20Issue:%0A%0AWhen%20did%20the%20issue%20start?:%0A%0AAffected%20link%20or%20page:%0A%0AScreenshots:%0A"
-                  style="
-                    display:inline-block;
-                    padding:10px 18px;
-                    background:#2563eb;
-                    color:#fff;
-                    text-decoration:none;
-                    border-radius:8px;
-                    font-weight:500;
-                  ">
-                  Submit a Request
-                </a>
-              </div>
-            </div>
-
-            <p class="lede" style="margin-top: 14px;">
-              All requests are handled through a structured, ticket-based system.
-            </p>
-
-            <div class="process-box">
-              <h3>Client Support Hours</h3>
-
-              <p class="lede">
-                Requests can be submitted at any time. Responses and active support are provided during the hours below.
-              </p>
-
-              <p class="lede" style="margin-top: 10px;">
-                <strong>Time Zone:</strong> All hours are based on Eastern Time (EST), United States. Requests from other time zones are supported, with responses aligned to EST hours.
-              </p>
-
-              <p class="lede" style="margin-top: 12px;">
-                Support is provided during dedicated evening and weekend hours to ensure focused, high-quality service.<br>
-                <br>
-                Monday: 7:00 PM – 9:00 PM<br>
-                Tuesday: 7:45 PM – 9:30 PM<br>
-                Wednesday: Limited availability (urgent requests only)<br>
-                Thursday: 7:45 PM – 9:30 PM<br>
-                Friday: 6:00 PM – 9:00 PM<br>
-                Saturday: 10:00 AM – 4:00 PM<br>
-                Sunday: 1:00 PM – 5:00 PM
-              </p>
-
-              <p class="lede" style="margin-top: 12px;">
-                <strong>Urgent requests:</strong> May be reviewed outside of standard hours based on availability.
-              </p>
-
-              <p class="lede" style="margin-top: 12px;">
-                <strong>Please note:</strong> Responses and active support are provided during the hours listed above. Hours may be adjusted periodically based on workload and availability. Please refer to this page for the most up-to-date schedule and business updates.
-              </p>
-
-              <p class="lede" style="margin-top: 12px;">
-                <strong>Response Time:</strong> Most requests are reviewed and responded to within 12–24 hours during active support days.
-              </p>
-            </div>
-
-            <div class="process-box">
-              <h3>How It Works</h3>
-
-              <div class="process-grid">
-                <div class="process-step">
-                  <div class="step-number">1</div>
-                  <h3>Send your request</h3>
-                  <p>Email your issue, request, or business need with as much detail as possible.</p>
-                </div>
-
-                <div class="process-step">
-                  <div class="step-number">2</div>
-                  <h3>Issue review</h3>
-                  <p>I review the issue, assess the scope, and identify what needs to be fixed, built, or improved.</p>
-                </div>
-
-                <div class="process-step">
-                  <div class="step-number">3</div>
-                  <h3>Next steps</h3>
-                  <p>You receive a response with recommended next steps, timeline, and pricing if applicable.</p>
-                </div>
-
-                <div class="process-step">
-                  <div class="step-number">4</div>
-                  <h3>Remote completion</h3>
-                  <p>Once confirmed, the work is completed remotely, tested, and handed off clearly.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="cta-box">
-              <h3>Ready to get started?</h3>
-              <p>
-                Have an issue with your website, dashboard, report, or business workflow? Reach out and I’ll take a look.
-              </p>
-              <div class="cta-actions">
-                <a class="btn primary" href="mailto:gwinanalytics@zohomail.com?subject=Support%20Request">Email Now</a>
-                <a class="btn" href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-    </div>
-
-    <div class="footer">© Gwin Analytics</div>
-  </main>
-
-  <script>
-    let deferredPrompt;
-
-    const installButton = document.getElementById("installButton");
-    const installButtonSecondary = document.getElementById("installButtonSecondary");
-
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-
-      if (installButton) installButton.style.display = "inline-flex";
-      if (installButtonSecondary) installButtonSecondary.style.display = "inline-flex";
-    });
-
-    async function handleInstall() {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-
-      if (installButton) installButton.style.display = "none";
-      if (installButtonSecondary) installButtonSecondary.style.display = "none";
-    }
-
-    if (installButton) {
-      installButton.addEventListener("click", handleInstall);
-    }
-
-    if (installButtonSecondary) {
-      installButtonSecondary.addEventListener("click", handleInstall);
-    }
-
-    let allDashboards = [];
-
-    function renderLibrary(items) {
-      const grid = document.getElementById("libraryGrid");
-      const empty = document.getElementById("libraryEmpty");
-
-      grid.innerHTML = "";
-
-      if (!items.length) {
-        empty.style.display = "block";
-        return;
-      }
-
-      empty.style.display = "none";
-
-      items.forEach((item) => {
-        const tags = (item.tags || []).map(tag => `<span>${tag}</span>`).join("");
-
-        const card = document.createElement("article");
-        card.className = "library-card";
-        card.innerHTML = `
+        <div class="deliverable">
+          <span class="dot" aria-hidden="true"></span>
           <div>
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-            <div class="meta">${tags}</div>
+            <strong>Competitor Research</strong>
+            <p class="lede">Study similar businesses, their services, positioning, reviews, and visible strengths.</p>
           </div>
-          <div class="card-links">
-            <a href="${item.embed}" target="_blank" rel="noreferrer">Open dashboard</a>
+        </div>
+
+        <div class="deliverable">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <strong>Pricing & Service Comparison</strong>
+            <p class="lede">Compare public pricing, packages, service descriptions, and how value is presented.</p>
           </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
+        </div>
 
-    async function loadDashboardLibrary() {
-      const empty = document.getElementById("libraryEmpty");
+        <div class="deliverable">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <strong>Opportunity Notes</strong>
+            <p class="lede">Identify possible gaps, weak spots, missed opportunities, and practical next steps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      try {
-        const response = await fetch("dashboards.json");
-        if (!response.ok) throw new Error("Failed to load dashboard library");
+    <section id="services" class="section">
+      <div class="section-label">What We Help With</div>
+      <h2>Focused research that helps businesses improve.</h2>
 
-        const data = await response.json();
-        allDashboards = Array.isArray(data) ? data : [];
-        renderLibrary(allDashboards);
-      } catch (error) {
-        console.error("Could not load dashboards.json", error);
-        empty.textContent = "Dashboard library updates will appear here.";
-        empty.style.display = "block";
-      }
-    }
+      <div class="grid-3">
+        <article class="service-card">
+          <h3>Competitor Research</h3>
+          <p>See what similar businesses are doing, how they present their services, and where your business may be able to stand out.</p>
+        </article>
 
-    const searchInput = document.getElementById("dashboardSearch");
-    if (searchInput) {
-      searchInput.addEventListener("input", (e) => {
-        const term = e.target.value.toLowerCase().trim();
+        <article class="service-card">
+          <h3>Customer Feedback Analysis</h3>
+          <p>Turn reviews, comments, complaints, and praise into clear patterns that show what customers care about.</p>
+        </article>
 
-        const filtered = allDashboards.filter(item => {
-          const haystack = [
-            item.title,
-            item.description,
-            ...(item.tags || [])
-          ].join(" ").toLowerCase();
+        <article class="service-card">
+          <h3>Pricing & Service Review</h3>
+          <p>Understand how your services, offers, or pricing compare against public competitor information.</p>
+        </article>
 
-          return haystack.includes(term);
-        });
+        <article class="service-card">
+          <h3>Online Presence Review</h3>
+          <p>Review your website, Google Business Profile, service clarity, reviews, and customer-facing information.</p>
+        </article>
 
-        renderLibrary(filtered);
-      });
-    }
+        <article class="service-card">
+          <h3>Market Opportunity Report</h3>
+          <p>Identify practical opportunities based on customer needs, competitor gaps, local demand, and business positioning.</p>
+        </article>
 
-    loadDashboardLibrary();
-  </script>
+        <article class="service-card">
+          <h3>Email-Based Support</h3>
+          <p>Requests, updates, report delivery, and follow-up questions are handled by email so every detail stays organized.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Who We Help</div>
+      <h2>Built for businesses that need clarity, not complicated consulting.</h2>
+
+      <div class="grid-2">
+        <article class="mini-card">
+          <h3>Small Businesses & Solopreneurs</h3>
+          <p>For owners who are focused on daily operations and may not have time to study competitors, reviews, pricing, or market changes.</p>
+        </article>
+
+        <article class="mini-card">
+          <h3>Growing Businesses</h3>
+          <p>For companies that want clearer information before improving services, adjusting pricing, entering a market, or making customer-focused decisions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="section-label">Process</div>
+      <h2>Simple, remote, and email-first.</h2>
+
+      <div class="process-grid">
+        <article class="step-card">
+          <div class="step-number">1</div>
+          <h3>Send a request</h3>
+          <p>Email your business name, website, industry, location, and what you want to better understand.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">2</div>
+          <h3>Research begins</h3>
+          <p>Gwin Analytics reviews public business information, customer feedback, competitors, services, and market signals.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">3</div>
+          <h3>Receive your report</h3>
+          <p>You receive a clear report with findings, observations, and practical recommendations.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">4</div>
+          <h3>Follow up by email</h3>
+          <p>Questions, clarifications, and next steps are handled by email to keep communication organized.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-label">Contact</div>
+      <h2>Request a Business Insight Snapshot.</h2>
+
+      <p class="lede">
+        Send your business name, website, industry, location, and what you want to better understand about your customers, competitors, pricing, reviews, or market opportunities.
+      </p>
+
+      <div class="contact-card">
+        <h3>Email-first communication</h3>
+        <p>
+          Gwin Analytics handles project requests, updates, report delivery, and follow-up questions by email. This keeps every project clear, documented, and easy to track.
+        </p>
+
+        <a
+          class="email-line"
+          href="mailto:gwinanalytics@zohomail.com?subject=Business%20Insight%20Snapshot%20Request&body=Business%20Name:%0AWebsite:%0AIndustry:%0ALocation:%0AWhat%20would%20you%20like%20to%20better%20understand%20about%20your%20customers,%20competitors,%20pricing,%20reviews,%20or%20market?:%0A">
+          gwinanalytics@zohomail.com
+        </a>
+
+        <p class="note">
+          Most emails are reviewed within 24 hours when available. No phone number is required to start a request.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn primary"
+            href="mailto:gwinanalytics@zohomail.com?subject=Business%20Insight%20Snapshot%20Request&body=Business%20Name:%0AWebsite:%0AIndustry:%0ALocation:%0AWhat%20would%20you%20like%20to%20better%20understand%20about%20your%20customers,%20competitors,%20pricing,%20reviews,%20or%20market?:%0A">
+            Send a Project Request
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/jardin-gwin" target="_blank" rel="noreferrer">
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © Gwin Analytics. Market research and business insights for better decisions.
+    </footer>
+  </main>
 </body>
 </html>
+'''
+
+path = Path("/mnt/data/gwin-analytics-updated-index.html")
+path.write_text(html, encoding="utf-8")
+path
