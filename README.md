@@ -1,72 +1,100 @@
 Gwin Analytics
+Market Research & Business Insights for Growing Businesses
 
-Professional Portfolio & Interactive Analytics Hub Author: Jardin Gwin, 
-Data Analyst & Analytics Developer
+Gwin Analytics helps businesses understand their customers, competitors, pricing, reviews, and market opportunities through simple research reports and clear business insights.
 
-Deployment Links: * Main Site: gwinanalytics.com
-•	WealthIQ App: app.gwinanalytics.com
-________________________________________
-Executive Overview
+Many business owners are focused on daily operations, customer service, scheduling, staffing, and sales. Because of that, important market information can get missed.
 
-Gwin Analytics is a centralized hub designed to showcase high-impact business 
-intelligence projects, interactive dashboards, and custom analytics applications. 
-By bridging the gap between raw data and actionable insights, the platform serves as 
-a live demonstration of modern data visualization and web-integrated analytics.
-________________________________________
-Key Components
+Gwin Analytics helps fill that gap by researching the areas businesses may not have time to study closely and turning that information into practical reports they can use to improve and grow.
 
-WealthIQ Financial Analytics
+What We Do
+Business Insight Snapshot
 
-A specialized, browser-based application designed for deep-dive financial 
-calculations and trend exploration.
-    •	Access: WealthIQ App Interface
-    •	Key Features: Interactive financial modeling tools, installable PWA 
-      (Progressive Web App) capabilities, and a streamlined, analytics-first UI.
+Our main service is the Business Insight Snapshot, a simple research report designed to help businesses better understand their market.
 
-Interactive Dashboard Gallery
+The report can include:
 
-A curated collection of embedded Power BI reports allowing users to filter and 
-analyze data in real-time. Core focus areas include:
+Customer review analysis
+Competitor research
+Pricing or service comparison
+Online presence observations
+Local market opportunity notes
+Clear recommendations for improvement
 
-•	Retail & E-commerce: Sales performance and consumer behavior metrics.
-•	Market Research: Stock market volatility and cost-of-living indices.
-•	Operational Intelligence: Process efficiency and data-driven research 
-projects.
+The goal is to help businesses make smarter decisions based on real information, not guesswork.
 
-Dynamic Dashboard Library
-A scalable repository powered by a JSON backend, allowing for seamless 
-navigation of the portfolio.
-  •	Functionality: Full-text search, tag-based filtering, and expandable project summaries.
-________________________________________
-Technical Stack
-Category	       Technologies
-Analytics & BI	 Microsoft Power BI, Excel, SQL, Python
-Development	     HTML5, CSS3, JavaScript (ES6+), JSON
-Deployment	     GitHub Pages, Custom Domain Management
-________________________________________
-Project Architecture
-•	index.html: The core interface and portfolio engine.
-•	dashboards.json: The dynamic data source driving the library’s metadata.
-•	Assets: Optimized iconography and favicons configured for multi-device 
-web app installation.
-________________________________________
-Professional Objectives
+Who We Help
 
-This platform is a functional alternative to a traditional resume, designed to:
-•	Validate Technical Proficiency: Demonstrating end-to-end data pipeline 
-  management.
+Gwin Analytics works with small businesses, solopreneurs, local service providers, and growing companies that may not have a dedicated research, analytics, or strategy team.
 
-•	Host Live Assets: Providing a public-facing sandbox for stakeholders to 
- interact with live dashboards.
+This service is useful for businesses that want to better understand:
 
-•	Productize Data: Transforming static research into interactive, user-centric 
- web applications.
-________________________________________
-About the Developer
-Jardin Gwin Specializing in Business Intelligence, Financial Analytics, and 
-Economic Research.
+What customers are saying
+What competitors are doing
+How their services compare
+Where their pricing stands
+What opportunities they may be missing
+How they can improve their business decisions
+Why It Matters
 
-•	LinkedIn: linkedin.com/in/jardin-gwin
+A business cannot improve what it does not understand.
 
-•	GitHub: github.com/jardingwin975-data
+If a company does not clearly understand its customers, competitors, pricing, reviews, and market position, it may miss opportunities to grow, improve service, or stay competitive.
 
+Gwin Analytics provides organized research and simple insight reports so business owners can see what is happening around them and take action with more confidence.
+
+Simple Process
+1. Submit a Request
+
+Send your business name, website, industry, location, and what you want to better understand.
+
+2. Research & Review
+
+Gwin Analytics reviews public business information, customer feedback, competitors, pricing, services, and market signals.
+
+3. Receive Your Report
+
+You receive a simple, easy-to-read report with key findings, observations, and practical recommendations.
+
+4. Follow Up by Email
+
+Questions, updates, and follow-ups are handled by email so everything stays organized and easy to track.
+
+Services
+Business Insight Snapshot
+
+A clear overview of your customers, competitors, pricing, reviews, and local market opportunities.
+
+Competitor Research
+
+A focused review of similar businesses, their services, positioning, reviews, and visible strengths.
+
+Customer Feedback Analysis
+
+A review of customer comments, Google reviews, complaints, praise, and repeated themes.
+
+Pricing & Service Comparison
+
+A comparison of public pricing, packages, services, and how your business presents its value.
+
+Market Opportunity Report
+
+A simple report identifying possible gaps, missed opportunities, and areas for improvement.
+
+Email-Based Research Support
+
+Gwin Analytics is an email-first research and insights service. Project requests, updates, report delivery, and follow-up questions are handled by email to keep communication clear, organized, and documented.
+
+About Gwin Analytics
+
+Gwin Analytics was created to help businesses make better decisions through research, data, and clear reporting.
+
+The business focuses on market research, competitor analysis, customer feedback, pricing research, and simple insight reports. Each report is designed to be practical, easy to understand, and focused on helping businesses improve.
+
+Contact
+
+Want to better understand your customers, competitors, pricing, reviews, or market opportunities?
+
+Request a Business Insight Snapshot by email.
+
+Email: [your business email]
