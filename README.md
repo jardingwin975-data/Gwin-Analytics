@@ -1,100 +1,134 @@
 Gwin Analytics
-Market Research & Business Insights for Growing Businesses
 
-Gwin Analytics helps businesses understand their customers, competitors, pricing, reviews, and market opportunities through simple research reports and clear business insights.
+Business Research & Writing for Better Decisions
 
-Many business owners are focused on daily operations, customer service, scheduling, staffing, and sales. Because of that, important market information can get missed.
+Gwin Analytics is a business research and writing service that helps organizations answer important business questions through concise, evidence-based briefs, memos, summaries, and reports.
 
-Gwin Analytics helps fill that gap by researching the areas businesses may not have time to study closely and turning that information into practical reports they can use to improve and grow.
+Every project begins with a focused question. I research credible sources, compare available information, evaluate the evidence, and transform the findings into a clear business document that supports informed decision-making.
+
+Whether you’re evaluating competitors, exploring a market opportunity, comparing products or services, or preparing a proposal, Gwin Analytics delivers research you can understand and use.
+
+⸻
 
 What We Do
-Business Insight Snapshot
 
-Our main service is the Business Insight Snapshot, a simple research report designed to help businesses better understand their market.
+Businesses make better decisions when they have reliable information.
 
-The report can include:
+Gwin Analytics specializes in investigating focused business questions and presenting the findings in clear, professional documents rather than lengthy technical reports or spreadsheets.
 
-Customer review analysis
-Competitor research
-Pricing or service comparison
-Online presence observations
-Local market opportunity notes
-Clear recommendations for improvement
+Services include research on:
 
-The goal is to help businesses make smarter decisions based on real information, not guesswork.
+* Markets and industries
+* Consumers and customer behavior
+* Competitors
+* Products and services
+* Pricing and value comparisons
+* Technology
+* Economic and affordability issues
+* Business opportunities
+
+Every project is tailored to the client’s question and supported by publicly available, credible information whenever possible.
+
+⸻
+
+Our Services
+
+Business Research Brief
+
+A concise overview of a business topic, market, product, competitor, or industry.
+
+Business Research Memo
+
+A focused one-to-three-page memo that answers a specific business question using research, analysis, and evidence-supported conclusions.
+
+Market & Competitor Research
+
+Research comparing competitors, market positioning, customer feedback, pricing, services, and visible business strategies.
+
+Consumer & Customer Research
+
+Research summarizing customer opinions, buying behavior, review trends, and recurring themes that may influence business decisions.
+
+Product & Technology Research
+
+Clear summaries of products, technologies, specifications, pricing, strengths, limitations, and market positioning.
+
+Pricing & Value Analysis
+
+Research comparing publicly available pricing, service offerings, and value propositions across competing businesses.
+
+Executive Summaries & Recommendation Memos
+
+Professional summaries that organize research findings into concise recommendations for business owners and decision-makers.
+
+Proposal Research & Writing Support
+
+Research and writing assistance for proposal sections, capability statements, business cases, and supporting documentation.
+
+⸻
 
 Who We Help
 
-Gwin Analytics works with small businesses, solopreneurs, local service providers, and growing companies that may not have a dedicated research, analytics, or strategy team.
+Gwin Analytics works with:
 
-This service is useful for businesses that want to better understand:
+* Small businesses
+* Startups
+* Solopreneurs
+* Consultants
+* Local service businesses
+* Marketing agencies
+* Organizations that need clear business research without hiring a full-time researcher
 
-What customers are saying
-What competitors are doing
-How their services compare
-Where their pricing stands
-What opportunities they may be missing
-How they can improve their business decisions
+⸻
+
 Why It Matters
 
-A business cannot improve what it does not understand.
+Business decisions are stronger when they’re supported by credible information.
 
-If a company does not clearly understand its customers, competitors, pricing, reviews, and market position, it may miss opportunities to grow, improve service, or stay competitive.
+Instead of spending hours searching through articles, reports, reviews, and competing opinions, clients receive a concise document that identifies the most important findings and explains what they mean.
 
-Gwin Analytics provides organized research and simple insight reports so business owners can see what is happening around them and take action with more confidence.
+The goal is simple:
+
+Provide clear, organized research that helps clients make informed business decisions with greater confidence.
+
+⸻
 
 Simple Process
-1. Submit a Request
 
-Send your business name, website, industry, location, and what you want to better understand.
+1. Tell Me Your Question
 
-2. Research & Review
+Describe the business question, challenge, or decision you need help researching.
 
-Gwin Analytics reviews public business information, customer feedback, competitors, pricing, services, and market signals.
+2. Research & Investigation
 
-3. Receive Your Report
+I review credible sources, compare available information, evaluate the evidence, and identify the most relevant findings.
 
-You receive a simple, easy-to-read report with key findings, observations, and practical recommendations.
+3. Writing & Analysis
 
-4. Follow Up by Email
+The research is organized into a concise business document written in plain English with practical observations and recommendations where appropriate.
 
-Questions, updates, and follow-ups are handled by email so everything stays organized and easy to track.
+4. Delivery
 
-Services
-Business Insight Snapshot
+Your completed brief, memo, summary, or report is delivered by email in a professional format ready to review, share, or use.
 
-A clear overview of your customers, competitors, pricing, reviews, and local market opportunities.
-
-Competitor Research
-
-A focused review of similar businesses, their services, positioning, reviews, and visible strengths.
-
-Customer Feedback Analysis
-
-A review of customer comments, Google reviews, complaints, praise, and repeated themes.
-
-Pricing & Service Comparison
-
-A comparison of public pricing, packages, services, and how your business presents its value.
-
-Market Opportunity Report
-
-A simple report identifying possible gaps, missed opportunities, and areas for improvement.
-
-Email-Based Research Support
-
-Gwin Analytics is an email-first research and insights service. Project requests, updates, report delivery, and follow-up questions are handled by email to keep communication clear, organized, and documented.
+⸻
 
 About Gwin Analytics
 
-Gwin Analytics was created to help businesses make better decisions through research, data, and clear reporting.
+Gwin Analytics was founded on a simple idea:
 
-The business focuses on market research, competitor analysis, customer feedback, pricing research, and simple insight reports. Each report is designed to be practical, easy to understand, and focused on helping businesses improve.
+Good decisions begin with good research.
+
+I specialize in researching focused business questions and transforming evidence into concise, professional writing that businesses can use to support planning, communication, proposals, and decision-making.
+
+My work combines market research, competitor analysis, consumer research, product research, and business writing to create practical documents that are clear, objective, and easy to understand.
+
+⸻
 
 Contact
 
-Want to better understand your customers, competitors, pricing, reviews, or market opportunities?
+Need research for an upcoming decision?
 
-Request a Business Insight Snapshot by email.
+Whether you’re evaluating competitors, exploring a market opportunity, comparing products, or preparing a proposal, Gwin Analytics can help transform research into clear business writing.
 
 Email: [your business email]
