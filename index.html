@@ -287,6 +287,21 @@
     .hero-card,
     .card,
     .step-card,
+
+    .sample-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sample-card p {
+      flex: 1;
+    }
+
+    .sample-card .btn {
+      align-self: flex-start;
+      margin-top: 18px;
+    }
+
     .contact-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -680,63 +695,76 @@
       </div>
     </section>
 
+
     <section id="samples" class="section">
-  <div class="section-label">Writing Samples</div>
+      <div class="section-label">Writing Samples</div>
 
-  <h2>See examples of our research and business writing.</h2>
+      <h2>View selected research and business writing.</h2>
 
-  <p class="lede">
-    Every project is built around careful research, organized analysis, and
-    clear business communication. Below are selected writing samples that
-    demonstrate the quality and style of work produced by Gwin Analytics.
-  </p>
-
-  <div class="grid-3">
-
-    <article class="card">
-      <h3>Business Proposal</h3>
-
-      <p>
-        A professional proposal prepared for a plumbing company outlining a
-        recurring executive reporting service, including objectives,
-        deliverables, benefits, and recommendations.
+      <p class="lede">
+        These samples demonstrate Gwin Analytics' approach to research,
+        organization, analysis, and clear business communication.
       </p>
 
-      <a class="btn" href="Business Proposal for James's Plumbing Company.pdf" target="_blank">
-        View Sample
-      </a>
-    </article>
+      <div class="grid-3">
+        <article class="card sample-card">
+          <h3>Business Proposal Sample</h3>
 
-    <article class="card">
-      <h3>Professional Writing Portfolio</h3>
+          <p>
+            A professional proposal prepared for a plumbing company outlining
+            an executive reporting service, including the objective, proposed
+            solution, benefits, deliverables, timeline, and next steps.
+          </p>
 
-      <p>
-        A collection of research-driven writing samples including market
-        research, product research, technical writing, marketing copy,
-        business communication, and analytical writing.
-      </p>
+          <a
+            class="btn"
+            href="./Business-Proposal-Sample.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Business Proposal
+          </a>
+        </article>
 
-      <a class="btn" href="Jardin_Gwin_Professional_Writing_Portfolio.pdf" target="_blank">
-        View Portfolio
-      </a>
-    </article>
+        <article class="card sample-card">
+          <h3>Professional Writing Portfolio</h3>
 
-    <article class="card">
-      <h3>Promotional Writing Sample</h3>
+          <p>
+            A collection of research-driven work covering product research,
+            marketplace verification, technical writing, business communication,
+            promotional copy, and analytical writing.
+          </p>
 
-      <p>
-        A concise marketing piece demonstrating persuasive business writing,
-        customer-focused messaging, and value-driven communication for small
-        businesses.
-      </p>
+          <a
+            class="btn"
+            href="./Professional-Writing-Portfolio.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Writing Portfolio
+          </a>
+        </article>
 
-      <a class="btn" href="Gwin_Analytics_Promotional_AD.pdf" target="_blank">
-        View Sample
-      </a>
-    </article>
+        <article class="card sample-card">
+          <h3>Promotional Writing Sample</h3>
 
-  </div>
-</section>
+          <p>
+            A concise promotional piece demonstrating persuasive business
+            writing, customer-focused messaging, benefit statements, and a
+            direct call to action.
+          </p>
+
+          <a
+            class="btn"
+            href="./Promotional-Writing-Sample.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Promotional Sample
+          </a>
+        </article>
+      </div>
+    </section>
 
     <section id="services" class="section">
       <div class="section-label">Services</div>
